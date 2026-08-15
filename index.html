@@ -1383,7 +1383,16 @@ Más de 8.500 personas ya siguieron este protocolo y muchas lograron perder entr
 
        <button
     class="btn btn-pulse"
-    onclick="goToScreen(11)">
+    onclick=onclick="
+    document.getElementById('plan-step').style.display='none';
+    var s11=document.getElementById('screen-11');
+    s11.style.display='block';
+    s11.style.visibility='visible';
+    s11.style.opacity='1';
+    s11.classList.add('active');
+    currentScreen=11;
+    window.scrollTo({top:0,behavior:'smooth'});
+"
     VER MI PLAN
     <i class="fa-solid fa-arrow-right"></i>
 </button>
