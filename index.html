@@ -1354,11 +1354,11 @@ Más de 8.500 personas ya siguieron este protocolo y muchas lograron perder entr
 </div>
 
 <div id="plan-step" style="display:none;">
-            <div id="plan-step" style="display:none;">
 
     <div class="revelation-section">
 
         <div class="revelation-img-wrap">
+
             <div class="revelation-img-label">
                 TU PLAN DETOX ESTÁ LISTO
             </div>
@@ -1366,41 +1366,41 @@ Más de 8.500 personas ya siguieron este protocolo y muchas lograron perder entr
             <img
                 src="https://i.ibb.co/wFzWLMG3/WEBP1.webp"
                 alt="Tu Plan Detox Está Listo"
-                class="revelation-image">
+                class="revelation-image"
+            >
+
         </div>
 
         <div class="success-box">
+
             <h3>
                 <i class="fa-solid fa-check-circle"></i>
                 PLAN PERSONALIZADO
             </h3>
 
             <p>
-                Con base en tus respuestas, identificamos tu nivel de intoxicación y la combinación de jugos ideal.
+                Con base en tus respuestas, identificamos tu nivel de intoxicación
+                y la combinación de jugos ideal.
                 Recibe el plan + 4 bonos exclusivos.
             </p>
+
         </div>
 
-       <button
-    class="btn btn-pulse"
-    onclick=onclick="
-    document.getElementById('plan-step').style.display='none';
-    var s11=document.getElementById('screen-11');
-    s11.style.display='block';
-    s11.style.visibility='visible';
-    s11.style.opacity='1';
-    s11.classList.add('active');
-    currentScreen=11;
-    window.scrollTo({top:0,behavior:'smooth'});
-"
-    VER MI PLAN
-    <i class="fa-solid fa-arrow-right"></i>
-</button>
+        <button
+            class="btn btn-pulse"
+            onclick="
+                document.getElementById('plan-step').style.display='none';
+                goToScreen(11);
+            ">
+            VER MI PLAN
+            <i class="fa-solid fa-arrow-right"></i>
+        </button>
 
     </div>
 
 </div>
-            </div>
+
+</div>
         <div class="screen" id="screen-11" data-screen="11" data-editable-section="s11">
             <div class="quiz-header">
                 <div class="quiz-step"><i class="fa-solid fa-comments"></i> TRANSFORMACIONES REALES Y DOCUMENTADAS</div>
