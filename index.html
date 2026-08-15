@@ -1383,10 +1383,18 @@ Más de 8.500 personas ya siguieron este protocolo y muchas lograron perder entr
 
         <button
             class="btn btn-pulse"
-            onclick="nextScreen()">
-            VER MI PLAN
-            <i class="fa-solid fa-arrow-right"></i>
-        </button>
+            onclick=<button
+    class="btn btn-pulse"
+    onclick="
+        document.querySelectorAll('.screen').forEach(function(s){
+            s.classList.remove('active');
+        });
+        document.getElementById('screen-11').classList.add('active');
+        window.scrollTo({top:0, behavior:'smooth'});
+    ">
+    VER MI PLAN
+    <i class="fa-solid fa-arrow-right"></i>
+</button>
 
     </div>
 
