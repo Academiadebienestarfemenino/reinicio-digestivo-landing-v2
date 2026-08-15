@@ -1,0 +1,1901 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reinicio Digestivo™ </title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@500;600;700;800&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Facebook Pixel (injetado só se o membro configurou o Pixel ID) -->
+    <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1525883025320506');fbq('track','PageView');</script><noscript></noscript><style id="afp-a8-vazios">
+/* Esconde item de benefício que ficou sem texto (campo em branco no editor). */
+.benefit-card:has(> h3:empty),
+.problem-card:has(> h3:empty),
+.step-card:has(> h3:empty){display:none!important}
+</style>
+<style id="cover-square-fix">.hero-image{aspect-ratio:1/1 !important;object-fit:cover !important}</style></head><body><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1525883025320506&amp;ev=PageView&amp;noscript=1">
+    
+
+    <!-- UTM Tracking -->
+    <script>(function(){var p=new URLSearchParams(location.search);['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(function(k){var v=p.get(k);if(v)sessionStorage.setItem(k,v)})})()</script>
+
+    <style>
+        p:empty{display:none;}
+        /* === DARK MOMENTUM — CSS VARIABLES & RESET === */
+        :root {
+            --primary: #22c55e;
+            --primary-dark: #04a740;
+            --primary-light: #4aed86;
+            --secondary: #fde047;
+            --bg-dark: #05060f;
+            --bg-medium: #0c0e1e;
+            --bg-light: #141833;
+            --text-main: #e9eaf2;
+            --text-muted: #9aa0b8;
+            --text-bright: #ffffff;
+            --card-bg: rgba(255,255,255,0.045);
+            --card-border: rgba(255,255,255,0.09);
+            --glass-bg: rgba(255,255,255,0.055);
+            --glass-border: rgba(255,255,255,0.12);
+            --radius: 20px;
+            --radius-sm: 16px;
+            --radius-xs: 10px;
+            --shadow: 0 12px 40px rgba(0,0,0,0.45);
+            --shadow-glow: 0 0 30px rgba(100,100,255,0.15);
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+        html { scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-dark);
+            background-image: linear-gradient(180deg, #070918 0%, var(--bg-dark) 40%);
+            color: var(--text-main);
+            min-height: 100vh;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Ambient glow background — radial da cor primária no topo + secundária embaixo */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background:
+                radial-gradient(ellipse 95% 55% at 50% -8%, rgba(100,100,255,0.16) 0%, transparent 62%),
+                radial-gradient(ellipse 65% 45% at 88% 108%, rgba(150,80,255,0.10) 0%, transparent 55%),
+                radial-gradient(ellipse 45% 35% at 5% 55%, rgba(80,140,255,0.06) 0%, transparent 50%);
+            background:
+                radial-gradient(ellipse 95% 55% at 50% -8%, color-mix(in srgb, var(--primary) 18%, transparent) 0%, transparent 62%),
+                radial-gradient(ellipse 65% 45% at 88% 108%, color-mix(in srgb, var(--secondary) 12%, transparent) 0%, transparent 55%),
+                radial-gradient(ellipse 45% 35% at 5% 55%, color-mix(in srgb, var(--primary-light) 7%, transparent) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--text-bright);
+            line-height: 1.18;
+            letter-spacing: -0.02em;
+        }
+
+        ::selection { background: var(--primary); color:#fff; }
+
+        /* === PROGRESS BAR (fina, sem números) === */
+        .progress-bar-wrap {
+            position: fixed; top:0; left:0; width:100%; height:5px;
+            background: rgba(255,255,255,0.06); z-index:1000;
+        }
+        .progress-bar-fill {
+            height:100%; width:0%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 0 3px 3px 0;
+            box-shadow: 0 0 14px rgba(100,100,255,0.5);
+            box-shadow: 0 0 14px color-mix(in srgb, var(--primary) 60%, transparent);
+        }
+
+        /* === CONTAINER & SCREENS === */
+        .container {
+            max-width: 560px;
+            margin: 0 auto;
+            padding: 24px 18px 32px;
+            min-height: 100vh;
+            position: relative;
+            z-index: 1;
+        }
+
+        .screen {
+            display: none;
+            animation: fadeSlideIn 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+        .screen.active { display: block; }
+
+        @keyframes fadeSlideIn {
+            from { opacity:0; transform:translateY(22px) scale(0.995); }
+            to { opacity:1; transform:translateY(0) scale(1); }
+        }
+        @keyframes float {
+            0%, 100% { transform:translateY(0); }
+            50% { transform:translateY(-10px); }
+        }
+        @keyframes pulse {
+            0%, 100% { transform:scale(1); box-shadow:0 0 0 0 rgba(100,100,255,0.3); }
+            50% { transform:scale(1.05); box-shadow:0 0 30px 10px rgba(100,100,255,0.1); }
+        }
+        @keyframes blink {
+            0%, 100% { opacity:1; }
+            50% { opacity:0.3; }
+        }
+        @keyframes shimmer {
+            0% { background-position:-200% 0; }
+            100% { background-position:200% 0; }
+        }
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 5px rgba(100,100,255,0.2); }
+            50% { box-shadow: 0 0 20px rgba(100,100,255,0.4); }
+        }
+        @keyframes slideUp {
+            from { opacity:0; transform:translateY(16px); }
+            to { opacity:1; transform:translateY(0); }
+        }
+        @keyframes scaleIn {
+            from { opacity:0; transform:scale(0.9); }
+            to { opacity:1; transform:scale(1); }
+        }
+        @keyframes typingCursor {
+            0%, 100% { border-color: var(--primary); }
+            50% { border-color: transparent; }
+        }
+        @keyframes checkPop {
+            0% { transform:scale(0); opacity:0; }
+            70% { transform:scale(1.25); opacity:1; }
+            100% { transform:scale(1); opacity:1; }
+        }
+        @keyframes ctaGlow {
+            0%, 100% { box-shadow: 0 6px 26px rgba(0,0,0,0.45), 0 0 18px rgba(100,100,255,0.30); }
+            50% { box-shadow: 0 6px 26px rgba(0,0,0,0.45), 0 0 34px rgba(100,100,255,0.55); }
+        }
+
+        /* === S1 HERO === */
+        .hero { text-align:center; padding:52px 0 40px; }
+        .hero-badge {
+            display:inline-flex; align-items:center; gap:7px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color:#fff; font-size:0.72rem; font-weight:700;
+            padding:7px 18px; border-radius:50px;
+            text-transform:uppercase; letter-spacing:1.5px;
+            margin-bottom:22px;
+            box-shadow: 0 0 18px rgba(100,100,255,0.35);
+            box-shadow: 0 0 18px color-mix(in srgb, var(--primary) 45%, transparent);
+            animation: glow 2.4s ease-in-out infinite;
+        }
+        /* HERO IMAGE — aceita arte VERTICAL (~572x916) e capa QUADRADA:
+           dimensões automáticas + limites máximos, nunca corta nem distorce. */
+        .hero-image {
+            width: auto; height: auto;
+            max-width: min(76vw, 300px);
+            max-height: 50vh;
+            object-fit: contain;
+            border-radius: 18px;
+            margin: 0 auto 26px; display: block;
+            box-shadow: 0 22px 60px rgba(0,0,0,0.6), 0 0 40px rgba(100,100,255,0.14);
+            box-shadow: 0 22px 60px rgba(0,0,0,0.6), 0 0 40px color-mix(in srgb, var(--primary) 22%, transparent);
+            animation: float 3.4s ease-in-out infinite;
+        }
+        @media (max-width: 380px) {
+            .hero-image { max-width: 80vw; }
+        }
+        .hero h1 {
+            font-size: clamp(1.7rem, 6.4vw, 2.1rem);
+            margin-bottom:14px;
+            background: linear-gradient(120deg, var(--text-bright) 45%, var(--primary-light));
+            -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+        }
+        .hero p { font-size:0.97rem; color:var(--text-muted); margin-bottom:30px; max-width:440px; margin-left:auto; margin-right:auto; }
+
+        .hero-warn {
+            background: linear-gradient(135deg, rgba(255,59,48,0.10), rgba(255,59,48,0.03));
+            border: 1px solid rgba(255,59,48,0.22);
+            border-radius: var(--radius-sm);
+            padding: 16px 20px;
+            margin-bottom: 28px;
+            text-align: left;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+        .hero-warn-title {
+            font-size: 0.8rem; font-weight: 700; color: #ff7b72;
+            margin-bottom: 6px; display:flex; align-items:center; gap:7px;
+        }
+        .hero-warn-text { font-size: 0.84rem; color: var(--text-muted); line-height:1.55; }
+
+        /* === BUTTONS (CTA glow, >=56px) === */
+        .btn {
+            display:inline-flex; align-items:center; justify-content:center; gap:10px;
+            width:100%; min-height:56px; padding:17px 30px;
+            font-family:'Space Grotesk', sans-serif; font-size:1.06rem; font-weight:700;
+            letter-spacing: 0.01em;
+            color:#fff;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border:none; border-radius:var(--radius-sm); cursor:pointer;
+            transition: var(--transition); text-decoration:none;
+            box-shadow: 0 6px 24px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.2);
+            position:relative; overflow:hidden;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .btn::before {
+            content:''; position:absolute; top:0; left:-100%; width:100%; height:100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+            transition: left 0.5s ease;
+        }
+        .btn:hover::before { left:100%; }
+        .btn:hover {
+            transform:translateY(-2px);
+            box-shadow:0 10px 34px rgba(0,0,0,0.5), 0 0 24px rgba(100,100,255,0.4), inset 0 1px 0 rgba(255,255,255,0.25);
+            box-shadow:0 10px 34px rgba(0,0,0,0.5), 0 0 24px color-mix(in srgb, var(--primary) 50%, transparent), inset 0 1px 0 rgba(255,255,255,0.25);
+        }
+        .btn:active { transform:translateY(1px) scale(0.99); }
+        .btn:disabled { opacity:0.4; cursor:not-allowed; transform:none !important; animation:none !important; }
+        .btn i { transition: transform 0.25s ease; }
+        .btn:hover i.fa-arrow-right { transform: translateX(4px); }
+        .btn-secondary {
+            background:var(--card-bg); border:1px solid var(--card-border);
+            box-shadow:none; min-width:56px; width:auto; flex-shrink:0;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+        .btn-secondary:hover { background:rgba(255,255,255,0.1); box-shadow:none; }
+        .btn-small { padding:14px 24px; font-size:0.95rem; min-height:48px; }
+        .btn-pulse { animation: ctaGlow 2s ease-in-out infinite; }
+
+        /* === QUIZ SCREENS === */
+        .quiz-header { text-align:center; margin:40px 0 26px; }
+        /* eyebrow pill (sem contador de etapas) */
+        .quiz-step {
+            display:inline-flex; align-items:center; gap:8px;
+            font-size:0.72rem; color:var(--primary-light); font-weight:700;
+            text-transform:uppercase; letter-spacing:2px; margin-bottom:14px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 7px 16px; border-radius: 50px;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+        .quiz-header h2 { font-size:1.5rem; margin-bottom:10px; }
+        .quiz-header h2 .accent {
+            background: linear-gradient(120deg, var(--primary-light), var(--secondary));
+            -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+        }
+        .quiz-header p { color:var(--text-muted); font-size:0.9rem; }
+
+        /* Radio options — glassmorphism */
+        .quiz-options { display:flex; flex-direction:column; gap:11px; margin-bottom:28px; }
+        .quiz-option {
+            display:flex; align-items:center; gap:14px;
+            padding:16px 18px; min-height:64px;
+            background: var(--glass-bg);
+            border:1.5px solid var(--card-border);
+            border-radius:var(--radius-sm); cursor:pointer;
+            transition: var(--transition); user-select:none;
+            backdrop-filter: blur(14px) saturate(140%);
+            -webkit-backdrop-filter: blur(14px) saturate(140%);
+            -webkit-tap-highlight-color: transparent;
+        }
+        .quiz-option:hover {
+            border-color:rgba(255,255,255,0.2);
+            background:rgba(255,255,255,0.08);
+            transform: translateY(-1px);
+        }
+        .quiz-option.selected {
+            border-color:var(--primary);
+            background: rgba(100,100,255,0.10);
+            background: color-mix(in srgb, var(--primary) 12%, rgba(255,255,255,0.04));
+            box-shadow: 0 0 0 1px var(--primary), 0 0 22px rgba(100,100,255,0.3), 0 6px 22px rgba(0,0,0,0.25);
+            box-shadow: 0 0 0 1px var(--primary), 0 0 22px color-mix(in srgb, var(--primary) 35%, transparent), 0 6px 22px rgba(0,0,0,0.25);
+            transform: scale(1.015);
+        }
+        .quiz-option-icon {
+            width:44px; height:44px; display:flex; align-items:center; justify-content:center;
+            background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.06);
+            border-radius:12px; font-size:1.1rem; color:var(--primary-light);
+            flex-shrink:0; transition:var(--transition);
+        }
+        .quiz-option.selected .quiz-option-icon {
+            background:linear-gradient(135deg, var(--primary), var(--secondary)); color:#fff;
+            border-color: transparent;
+            box-shadow: 0 4px 14px rgba(100,100,255,0.4);
+            box-shadow: 0 4px 14px color-mix(in srgb, var(--primary) 45%, transparent);
+        }
+        .quiz-option-content { flex:1; min-width:0; }
+        .quiz-option-text { font-size:0.94rem; font-weight:600; color:var(--text-main); }
+        .quiz-option.selected .quiz-option-text { color:var(--text-bright); }
+        .quiz-option-desc { font-size:0.78rem; color:var(--text-muted); margin-top:2px; }
+        .quiz-option-check {
+            margin-left:auto; width:24px; height:24px;
+            border:2px solid var(--card-border); border-radius:50%;
+            display:flex; align-items:center; justify-content:center;
+            flex-shrink:0; transition:var(--transition);
+        }
+        .quiz-option.selected .quiz-option-check {
+            background:linear-gradient(135deg, var(--primary), var(--secondary));
+            border-color:var(--primary); color:#fff; font-size:0.68rem;
+        }
+        .quiz-option.selected .quiz-option-check i { animation: checkPop 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+
+        /* Multi-select (checkbox style) */
+        .quiz-multi .quiz-option-check { border-radius:7px; }
+        .quiz-multi .quiz-option.selected .quiz-option-check { border-radius:7px; }
+
+        /* Navigation */
+        .quiz-nav { display:flex; gap:10px; }
+        .quiz-nav .btn { flex:1; }
+
+        /* === TYPING EFFECT === */
+        .typing-box {
+            background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-sm);
+            padding: 22px 20px 20px;
+            margin: 22px 0;
+            position: relative;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            animation: scaleIn 0.35s ease forwards;
+        }
+        .typing-box::before {
+            content: '\f075';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute; top: -12px; left: 20px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: #fff;
+            width: 26px; height: 26px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.62rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+        }
+        .typing-text {
+            font-size: 0.9rem;
+            color: var(--text-main);
+            line-height: 1.7;
+            font-style: italic;
+            min-height: 40px;
+        }
+        .typing-cursor {
+            display: inline-block;
+            width: 2px; height: 1em;
+            background: var(--primary);
+            margin-left: 2px;
+            animation: typingCursor 0.8s infinite;
+            vertical-align: text-bottom;
+        }
+
+        /* === S5 NAME INPUT === */
+        .name-input-wrap { margin: 26px 0; }
+        .name-label { font-size:0.82rem; color:var(--text-muted); margin-bottom:8px; display:block; font-weight:600; }
+        .name-input {
+            width:100%; padding:17px 20px; min-height:56px;
+            background: var(--glass-bg);
+            border:1.5px solid var(--card-border);
+            border-radius:var(--radius-sm);
+            color:var(--text-bright); font-size:1rem;
+            font-family:'Inter', sans-serif;
+            outline:none; transition:var(--transition);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        .name-input:focus {
+            border-color:var(--primary);
+            box-shadow:0 0 0 3px rgba(100,100,255,0.18), 0 0 20px rgba(100,100,255,0.15);
+            box-shadow:0 0 0 3px color-mix(in srgb, var(--primary) 22%, transparent), 0 0 20px color-mix(in srgb, var(--primary) 18%, transparent);
+        }
+        .name-input::placeholder { color:var(--text-muted); opacity:0.7; }
+        .name-privacy {
+            display:flex; align-items:flex-start; gap:8px;
+            margin-top:12px; font-size:0.78rem; color:var(--text-muted);
+        }
+        .name-privacy i { color:var(--primary-light); margin-top:2px; flex-shrink:0; }
+
+        /* === S10 REVELATION === */
+        .revelation-section { text-align:center; padding:34px 0; }
+        .revelation-img-wrap {
+            position:relative; display:inline-block; margin-bottom:24px;
+        }
+        .revelation-img-label {
+            position:absolute; top:-12px; left:50%; transform:translateX(-50%);
+            background:linear-gradient(135deg, var(--primary), var(--secondary));
+            color:#fff; font-size:0.65rem; font-weight:700;
+            padding:5px 14px; border-radius:20px;
+            text-transform:uppercase; letter-spacing:1px; white-space:nowrap;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+            z-index: 2;
+        }
+        .revelation-image {
+            width:auto; height:auto; max-width:200px; max-height:220px;
+            object-fit:contain;
+            border-radius: 14px;
+            filter:drop-shadow(0 14px 34px rgba(0,0,0,0.5));
+        }
+        .success-box {
+            background: linear-gradient(135deg, rgba(34,197,94,0.10), rgba(34,197,94,0.02));
+            border:1px solid rgba(34,197,94,0.22);
+            border-radius:var(--radius-sm);
+            padding:20px; margin:20px 0; text-align:left;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+        .success-box h3 { font-size:0.96rem; color:#4ade80; margin-bottom:8px; display:flex; align-items:center; gap:8px; }
+        .success-box p { font-size:0.86rem; color:var(--text-muted); line-height:1.6; }
+
+        /* === S11 TESTIMONIALS INLINE === */
+        .testimonial-inline {
+            background:var(--glass-bg); border:1px solid var(--glass-border);
+            border-radius:var(--radius-sm); padding:20px; margin-bottom:12px;
+            backdrop-filter:blur(14px);
+            -webkit-backdrop-filter:blur(14px);
+            position:relative;
+        }
+        .testimonial-inline::before {
+            content:'\201C';
+            position:absolute; top:6px; right:16px;
+            font-family:'Space Grotesk', sans-serif;
+            font-size:3rem; line-height:1; font-weight:700;
+            color:var(--primary); opacity:0.25;
+        }
+        .testimonial-stars { color:#fbbf24; font-size:0.78rem; margin-bottom:8px; letter-spacing:2px; }
+        .testimonial-inline p { font-size:0.87rem; color:var(--text-main); font-style:italic; line-height:1.6; }
+        .testimonial-author { display:flex; align-items:center; gap:10px; margin-top:14px; }
+        .testimonial-avatar {
+            width:38px; height:38px; border-radius:50%;
+            background:linear-gradient(135deg, var(--primary), var(--secondary));
+            display:flex; align-items:center; justify-content:center;
+            font-size:0.8rem; color:#fff; font-weight:700;
+            box-shadow: 0 4px 12px rgba(100,100,255,0.35);
+            box-shadow: 0 4px 12px color-mix(in srgb, var(--primary) 40%, transparent);
+        }
+        .testimonial-name { font-size:0.8rem; font-weight:600; color:var(--text-bright); }
+
+        /* === S12 SLIDER === */
+        .slider-wrap { margin:30px 0; text-align:center; }
+        .slider-value {
+            font-size:3.4rem; font-family:'Space Grotesk',sans-serif; font-weight:800;
+            background: linear-gradient(120deg, var(--text-bright), var(--primary-light));
+            -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+            margin-bottom:2px;
+        }
+        .slider-unit { font-size:1rem; color:var(--primary-light); font-weight:600; }
+        .slider-range {
+            -webkit-appearance:none; appearance:none;
+            width:100%; height:8px; border-radius:4px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+            outline:none; margin:22px 0 8px;
+            box-shadow: 0 0 14px rgba(100,100,255,0.25);
+            box-shadow: 0 0 14px color-mix(in srgb, var(--primary) 30%, transparent);
+        }
+        .slider-range::-webkit-slider-thumb {
+            -webkit-appearance:none; width:30px; height:30px; border-radius:50%;
+            background:var(--text-bright); cursor:pointer;
+            box-shadow:0 2px 10px rgba(0,0,0,0.4), 0 0 0 3px var(--primary);
+        }
+        .slider-range::-moz-range-thumb {
+            width:30px; height:30px; border-radius:50%; border:none;
+            background:var(--text-bright); cursor:pointer;
+            box-shadow:0 2px 10px rgba(0,0,0,0.4), 0 0 0 3px var(--primary);
+        }
+        .slider-hint { font-size:0.75rem; color:var(--text-muted); }
+        .slider-info {
+            background:var(--glass-bg); border:1px solid var(--glass-border);
+            border-radius:var(--radius-xs); padding:14px 16px; margin-top:18px;
+            font-size:0.83rem; color:var(--text-muted); line-height:1.55;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        /* === S15/S16 LOADING === */
+        .loading-screen { text-align:center; padding:64px 0; }
+        .loading-icon {
+            width:84px; height:84px; margin:0 auto 28px; border-radius:50%;
+            background:linear-gradient(135deg, var(--primary), var(--secondary));
+            display:flex; align-items:center; justify-content:center;
+            font-size:2rem; color:#fff;
+            box-shadow: 0 0 34px rgba(100,100,255,0.4);
+            box-shadow: 0 0 34px color-mix(in srgb, var(--primary) 45%, transparent);
+            animation:pulse 1.5s ease-in-out infinite;
+        }
+        .loading-screen h2 { font-size:1.3rem; margin-bottom:6px; }
+        .loading-screen h2 .highlight {
+            background: linear-gradient(120deg, var(--primary-light), var(--secondary));
+            -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+        }
+        .loading-screen p { color:var(--text-muted); font-size:0.88rem; margin-bottom:28px; }
+        .loading-bar-wrap {
+            width:100%; height:8px; background:rgba(255,255,255,0.08);
+            border-radius:4px; overflow:hidden; margin-bottom:10px;
+        }
+        .loading-bar-fill {
+            height:100%; width:0%;
+            background:linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius:4px; transition:width 0.3s ease;
+            box-shadow: 0 0 10px rgba(100,100,255,0.5);
+            box-shadow: 0 0 10px color-mix(in srgb, var(--primary) 55%, transparent);
+        }
+        .loading-percent { font-size:0.9rem; color:var(--primary-light); font-weight:700; font-family:'Space Grotesk',sans-serif; }
+        .loading-steps { margin-top:28px; text-align:left; display:flex; flex-direction:column; gap:10px; }
+        .loading-step {
+            display:flex; align-items:center; gap:10px; font-size:0.82rem;
+            color:var(--text-muted); opacity:0.4; transition:opacity 0.5s ease;
+        }
+        .loading-step.active { opacity:1; color:var(--text-main); }
+        .loading-step.done { opacity:1; color:var(--primary-light); }
+        .loading-step i { width:18px; text-align:center; }
+        .loading-image { display: none; } /* deprecated — substituído por .loading-spinner */
+        /* SPINNER — anéis animados na cor primária */
+        .loading-spinner {
+            position: relative;
+            width: 96px; height: 96px;
+            margin: 18px auto 26px;
+            display: block;
+        }
+        .loading-spinner::before,
+        .loading-spinner::after {
+            content: '';
+            position: absolute; inset: 0;
+            border-radius: 50%;
+            border: 4px solid transparent;
+        }
+        .loading-spinner::before {
+            border-top-color: var(--primary);
+            border-right-color: var(--primary);
+            filter: drop-shadow(0 0 6px rgba(100,100,255,0.6));
+            animation: spin-fast 1s linear infinite;
+        }
+        .loading-spinner::after {
+            border-bottom-color: var(--secondary);
+            border-left-color: var(--secondary);
+            opacity: 0.7;
+            animation: spin-fast 1.6s linear infinite reverse;
+            inset: 10px;
+        }
+        @keyframes spin-fast { to { transform: rotate(360deg); } }
+        .loading-dots {
+            display: flex; justify-content: center; gap: 8px;
+            margin: 12px auto 24px;
+        }
+        .loading-dots span {
+            width: 8px; height: 8px; border-radius: 50%;
+            background: var(--primary-light);
+            animation: dot-pulse 1.4s ease-in-out infinite;
+        }
+        .loading-dots span:nth-child(2) { animation-delay: 0.2s; }
+        .loading-dots span:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes dot-pulse {
+            0%, 80%, 100% { opacity: 0.3; transform: scale(0.85); }
+            40% { opacity: 1; transform: scale(1.1); }
+        }
+
+        /* === S17 RISK ALERT === */
+        .risk-section { padding:34px 0; }
+        .risk-header { text-align:center; margin-bottom:22px; }
+        .risk-header h2 { font-size:1.4rem; margin-bottom:6px; }
+        .risk-badge {
+            display:inline-flex; align-items:center; gap:7px;
+            background:rgba(255,59,48,0.12); color:#ff7b72;
+            border:1px solid rgba(255,59,48,0.25);
+            font-size:0.85rem; font-weight:700;
+            padding:9px 20px; border-radius:50px;
+            margin:12px 0; animation:blink 1.5s infinite;
+        }
+        .risk-text { font-size:0.9rem; color:var(--text-muted); text-align:center; margin-bottom:20px; }
+        .warn-box {
+            background:linear-gradient(135deg, rgba(255,59,48,0.08), rgba(255,59,48,0.02));
+            border:1px solid rgba(255,59,48,0.18);
+            border-radius:var(--radius-sm); padding:18px; margin-bottom:16px;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+        .warn-box h4 { font-size:0.92rem; color:#ff7b72; margin-bottom:6px; display:flex; align-items:center; gap:7px; }
+        .warn-box p { font-size:0.83rem; color:var(--text-muted); line-height:1.55; }
+        .alert-list { display:flex; flex-direction:column; gap:8px; margin:16px 0; }
+        .alert-item {
+            display:flex; align-items:flex-start; gap:10px;
+            padding:13px 15px;
+            background:rgba(255,59,48,0.05); border:1px solid rgba(255,59,48,0.12);
+            border-radius:var(--radius-xs); font-size:0.83rem; color:var(--text-muted); line-height:1.5;
+        }
+        .alert-item i { color:#ff7b72; margin-top:2px; flex-shrink:0; }
+        .good-news-box {
+            background:linear-gradient(135deg, rgba(34,197,94,0.10), rgba(34,197,94,0.02));
+            border:1px solid rgba(34,197,94,0.22);
+            border-radius:var(--radius-sm); padding:18px; margin:20px 0;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+        .good-news-box h4 { font-size:0.92rem; color:#4ade80; margin-bottom:6px; display:flex; align-items:center; gap:7px; }
+        .good-news-box p { font-size:0.86rem; color:var(--text-muted); line-height:1.6; }
+
+        /* === S18 METRICS === */
+        .metrics-section { padding:24px 0; }
+        .metric-card {
+            background:var(--glass-bg); border:1px solid var(--glass-border);
+            border-radius:var(--radius-sm); padding:16px; margin-bottom:10px;
+            backdrop-filter:blur(12px);
+            -webkit-backdrop-filter:blur(12px);
+        }
+        .metric-label { font-size:0.82rem; font-weight:700; color:var(--text-bright); margin-bottom:10px; }
+        .metric-compare { display:flex; align-items:center; gap:10px; }
+        .metric-before, .metric-after {
+            flex:1; padding:9px 10px; border-radius:var(--radius-xs);
+            font-size:0.76rem; text-align:center; font-weight:600;
+        }
+        .metric-before { background:rgba(255,59,48,0.10); color:#ff8a80; border:1px solid rgba(255,59,48,0.14); }
+        .metric-after { background:rgba(34,197,94,0.10); color:#69f0ae; border:1px solid rgba(34,197,94,0.16); }
+        .metric-arrow { color:var(--primary-light); font-size:0.85rem; }
+        .plan-box {
+            background:linear-gradient(150deg, var(--bg-medium), var(--bg-light));
+            border:1px solid var(--glass-border);
+            border-radius:var(--radius); padding:26px 22px; margin:22px 0;
+            position:relative; overflow:hidden;
+        }
+        .plan-box::before {
+            content:''; position:absolute; top:0; left:0; right:0; height:3px;
+            background:linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+        .plan-box h3 { font-size:1.08rem; margin-bottom:8px; text-align:center; }
+        .plan-box p { font-size:0.86rem; color:var(--text-muted); margin-bottom:16px; text-align:center; line-height:1.6; }
+        .plan-features { list-style:none; margin-bottom:20px; }
+        .plan-features li {
+            display:flex; align-items:center; gap:10px;
+            padding:9px 0; font-size:0.86rem; color:var(--text-main);
+            border-bottom:1px solid rgba(255,255,255,0.04);
+        }
+        .plan-features li:last-child { border-bottom:none; }
+        .plan-features li i { color:var(--primary-light); flex-shrink:0; }
+
+        /* === S19 BONUS === */
+        .bonus-grid { display:flex; flex-direction:column; gap:12px; margin:22px 0; }
+        .bonus-card {
+            background:var(--glass-bg); border:1px dashed rgba(100,100,255,0.5);
+            border:1px dashed color-mix(in srgb, var(--primary) 55%, transparent);
+            border-radius:var(--radius-sm); padding:18px; position:relative;
+            overflow:hidden;
+            backdrop-filter:blur(12px);
+            -webkit-backdrop-filter:blur(12px);
+        }
+        .bonus-card::before {
+            content:''; position:absolute; top:0; left:0; right:0; height:2px;
+            background:linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+        .bonus-num {
+            display:inline-block;
+            background:linear-gradient(135deg, var(--primary), var(--secondary));
+            color:#fff;
+            font-size:0.65rem; font-weight:700; padding:3px 9px;
+            border-radius:5px; margin-bottom:8px; letter-spacing:0.5px;
+        }
+        .bonus-card h4 { font-size:0.94rem; margin-bottom:4px; }
+        .bonus-card p { font-size:0.8rem; color:var(--text-muted); line-height:1.5; }
+
+        /* === S20 OFFER SHOWCASE === */
+        .offer-section { text-align:center; padding:24px 0; }
+        .offer-badge {
+            display:inline-flex; align-items:center; gap:7px;
+            background:linear-gradient(135deg, var(--primary), var(--secondary));
+            color:#fff; font-size:0.72rem; font-weight:700;
+            padding:7px 16px; border-radius:50px;
+            text-transform:uppercase; letter-spacing:1px; margin-bottom:16px;
+            box-shadow: 0 0 18px rgba(100,100,255,0.35);
+            box-shadow: 0 0 18px color-mix(in srgb, var(--primary) 42%, transparent);
+        }
+        .offer-section h2 { font-size:1.55rem; margin-bottom:8px; }
+        .offer-section h2 .accent {
+            background: linear-gradient(120deg, var(--primary-light), var(--secondary));
+            -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+        }
+        .offer-section > p { color:var(--text-muted); font-size:0.9rem; margin-bottom:24px; }
+
+        .feature-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:24px; }
+        .feature-card {
+            background:var(--glass-bg); border:1px solid var(--glass-border);
+            border-radius:var(--radius-sm); padding:18px 14px; text-align:center;
+            backdrop-filter:blur(12px);
+            -webkit-backdrop-filter:blur(12px);
+            transition: var(--transition);
+        }
+        .feature-card:hover { transform:translateY(-2px); border-color:rgba(255,255,255,0.2); }
+        .feature-card i {
+            font-size:1.5rem; margin-bottom:10px;
+            background: linear-gradient(135deg, var(--primary-light), var(--secondary));
+            -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+        }
+        .feature-card h4 { font-size:0.84rem; margin-bottom:4px; }
+        .feature-card p { font-size:0.72rem; color:var(--text-muted); }
+
+        .offer-card {
+            background:linear-gradient(150deg, var(--bg-medium), var(--bg-light));
+            border:1px solid rgba(100,100,255,0.28);
+            border:1px solid color-mix(in srgb, var(--primary) 32%, rgba(255,255,255,0.08));
+            border-radius:var(--radius); padding:30px 20px; margin-bottom:24px;
+            position:relative; overflow:hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 40px rgba(100,100,255,0.12);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 40px color-mix(in srgb, var(--primary) 15%, transparent);
+        }
+        .offer-card::before {
+            content:''; position:absolute; top:0; left:0; right:0; height:3px;
+            background:linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+        .offer-card-image {
+            width:auto; height:auto; max-width:180px; max-height:200px;
+            object-fit:contain;
+            border-radius:12px;
+            margin:0 auto 16px; display:block;
+            filter:drop-shadow(0 10px 26px rgba(0,0,0,0.45));
+        }
+        .offer-list { list-style:none; text-align:left; margin:16px 0; }
+        .offer-list li {
+            display:flex; align-items:flex-start; gap:10px;
+            padding:9px 0; font-size:0.86rem; color:var(--text-main);
+            border-bottom:1px solid rgba(255,255,255,0.05);
+        }
+        .offer-list li:last-child { border-bottom:none; }
+        .offer-list li i { color:var(--primary-light); margin-top:3px; flex-shrink:0; }
+        .offer-list li .offer-item-desc { font-size:0.75rem; color:var(--text-muted); }
+        .offer-highlight {
+            background:linear-gradient(135deg, rgba(255,215,0,0.10), rgba(255,215,0,0.02));
+            border:1px solid rgba(255,215,0,0.22);
+            border-radius:var(--radius-xs); padding:14px; margin:16px 0;
+            font-size:0.86rem; text-align:center; font-weight:700; color:#ffd700;
+        }
+
+        /* Price block — âncora riscada + preço destaque */
+        .price-block { text-align:center; margin:22px 0; }
+        .price-from { font-size:0.82rem; color:var(--text-muted); }
+        .price-old { font-size:1.1rem; color:var(--text-muted); text-decoration:line-through; margin:4px 0; opacity:0.8; }
+        .price-for { font-size:0.82rem; color:var(--primary-light); font-weight:700; margin-top:8px; text-transform:uppercase; letter-spacing:1px; }
+        .price-new {
+            font-size:3rem; font-family:'Space Grotesk',sans-serif; font-weight:800;
+            background: linear-gradient(120deg, var(--text-bright) 40%, var(--primary-light));
+            -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+            line-height:1.1;
+        }
+        .price-new .currency { font-size:1.3rem; vertical-align:super; }
+        .limited-badge {
+            display:inline-flex; align-items:center; gap:7px;
+            background:rgba(255,59,48,0.12); color:#ff7b72;
+            border:1px solid rgba(255,59,48,0.25);
+            font-size:0.78rem; font-weight:700;
+            padding:9px 16px; border-radius:50px; margin-bottom:16px;
+        }
+        .limited-badge i { animation:blink 1s infinite; }
+
+        /* Trust badges */
+        .trust-row { display:flex; justify-content:center; gap:18px; margin-top:18px; }
+        .trust-badge {
+            display:flex; flex-direction:column; align-items:center; gap:5px;
+            font-size:0.68rem; color:var(--text-muted); text-align:center;
+        }
+        .trust-badge i { font-size:1.25rem; color:var(--primary-light); }
+
+        /* === S21 FINAL CTA === */
+        .final-section { padding:24px 0; }
+        .final-section .hero-image {
+            width:auto; height:auto;
+            max-width:200px; max-height:300px;
+            animation:none;
+        }
+
+        /* Guarantee */
+        .guarantee-section {
+            display:flex; align-items:flex-start; gap:14px;
+            background:linear-gradient(135deg, rgba(34,197,94,0.08), rgba(255,255,255,0.03));
+            border:1px solid rgba(34,197,94,0.2);
+            border-radius:var(--radius-sm); padding:20px; margin:26px 0; text-align:left;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        .guarantee-icon {
+            width:52px; height:52px;
+            background:linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius:50%; display:flex; align-items:center; justify-content:center;
+            font-size:1.3rem; color:#fff; flex-shrink:0;
+            box-shadow: 0 6px 18px rgba(100,100,255,0.35);
+            box-shadow: 0 6px 18px color-mix(in srgb, var(--primary) 40%, transparent);
+        }
+        .guarantee-text h4 { font-size:0.96rem; margin-bottom:4px; }
+        .guarantee-text p { font-size:0.83rem; color:var(--text-muted); }
+
+        /* FAQ */
+        .faq-section { margin:30px 0; }
+        .faq-section h3 { text-align:center; font-size:1.12rem; margin-bottom:16px; }
+        .faq-item {
+            background:var(--glass-bg); border:1px solid var(--glass-border);
+            border-radius:var(--radius-xs); margin-bottom:7px; overflow:hidden;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        .faq-question {
+            display:flex; align-items:center; justify-content:space-between;
+            padding:15px 18px; cursor:pointer;
+            font-size:0.88rem; font-weight:600; color:var(--text-bright);
+            transition:var(--transition);
+        }
+        .faq-question:hover { color:var(--primary-light); }
+        .faq-question i { font-size:0.7rem; transition:transform 0.3s ease; color:var(--primary-light); }
+        .faq-item.open .faq-question i { transform:rotate(180deg); }
+        .faq-answer { max-height:0; overflow:hidden; transition:max-height 0.3s ease; }
+        .faq-answer-inner { padding:0 18px 15px; font-size:0.83rem; color:var(--text-muted); line-height:1.6; }
+        .faq-item.open .faq-answer { max-height:200px; }
+
+        /* Testimonials section */
+        .testimonials-section { margin:30px 0; }
+        .testimonials-section h3 { text-align:center; font-size:1.12rem; margin-bottom:16px; }
+        .testimonial-card {
+            background:var(--glass-bg); border:1px solid var(--glass-border);
+            border-radius:var(--radius-sm); padding:18px; margin-bottom:10px;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            position:relative;
+            text-align:left;
+        }
+        .testimonial-card::before {
+            content:'\201C';
+            position:absolute; top:4px; right:16px;
+            font-family:'Space Grotesk', sans-serif;
+            font-size:2.6rem; line-height:1; font-weight:700;
+            color:var(--primary); opacity:0.22;
+        }
+        .testimonial-card p { font-size:0.86rem; color:var(--text-main); font-style:italic; line-height:1.6; }
+
+        /* Footer */
+        .footer {
+            text-align:center; padding:30px 0 10px; font-size:0.72rem;
+            color:var(--text-muted); border-top:1px solid var(--card-border); margin-top:34px;
+        }
+        .footer a { color:var(--text-muted); text-decoration:none; transition:color 0.2s ease; }
+        .footer a:hover { color:var(--primary-light); }
+
+        /* === EDITOR HIGHLIGHT (for hybrid editor) === */
+        .editor-highlight {
+            outline: 2px solid var(--primary) !important;
+            outline-offset: 2px;
+            animation: glow 1s ease-in-out 2;
+        }
+
+        /* === RESPONSIVE === */
+        @media (min-width:640px) {
+            .container { padding:36px 24px; }
+            .hero h1 { font-size:2.3rem; }
+            .hero-image { max-width:300px; }
+            .offer-section h2 { font-size:1.8rem; }
+            .quiz-header h2 { font-size:1.65rem; }
+        }
+    </style>
+
+
+
+    <!-- PROGRESS BAR -->
+    <div class="progress-bar-wrap">
+        <div class="progress-bar-fill" id="progressBar"></div>
+    </div>
+
+    <div class="container">
+
+        <!-- ====== S1 - HERO / LANDING ====== -->
+        
+
+        <!-- ====== S2 - SATISFACAO (4 radio) ====== -->
+        
+
+        <!-- ====== S3 - AREAS DE INTERESSE (5 multi-select) ====== -->
+        
+
+        <!-- ====== S4 - MAIOR DESEJO (4 radio) ====== -->
+        
+
+        <!-- ====== S5 - NOME DO USUARIO ====== -->
+        
+
+        <!-- ====== S6 - IMPACTO NA VIDA (4 radio + typing) ====== -->
+        
+
+        <!-- ====== S7 - TENTATIVAS ANTERIORES (3 radio + typing) ====== -->
+        
+
+        <!-- ====== S8 - MAIOR OBSTACULO (5 radio) ====== -->
+        
+
+        <!-- ====== S9 - OBJETIVOS (6 multi-select) ====== -->
+        
+
+        <!-- ====== S10 - REVELACAO / METODO ====== -->
+        
+
+        <!-- ====== S11 - DEPOIMENTOS ====== -->
+        
+
+        <!-- ====== S12 - IDADE (slider) ====== -->
+        
+
+        <!-- ====== S13 - TEMPO COM PROBLEMA (4 radio) ====== -->
+        
+
+        <!-- ====== S14 - DISPONIBILIDADE (4 radio) ====== -->
+        
+
+        <!-- ====== S15 - LOADING 1 (analise) ====== -->
+        
+
+        <!-- ====== S16 - LOADING 2 (personalizando) ====== -->
+        
+
+        <!-- ====== S17 - ALERTA / RISCO ====== -->
+        
+
+        <!-- ====== S18 - METRICAS / COMPARACAO ====== -->
+        
+
+        <!-- ====== S19 - BONUS (4 bonus + typing) ====== -->
+        
+
+        <!-- ====== S20 - OFERTA / SHOWCASE ====== -->
+        
+
+        <!-- ====== S21 - CTA FINAL ====== -->
+        
+
+        <!-- ====== CUSTOM SCREENS (22-26) — Hidden by default ====== -->
+        
+        
+        
+        
+        
+
+    <div class="screen active" id="screen-1" data-screen="1" data-editable-section="s1">
+            <div class="hero">
+                <div class="hero-badge"><i class="fa-solid fa-fire"></i> IMPORTANTE</div>
+                <h1>Limpia y desinflama tu cuerpo con jugos naturales en solo 4 semanas.</h1>
+                <img src="https://apps.igorstorm.com/suco/images/capa-es/1" alt="Reinicio Digestivo™ " class="hero-image">
+                <p>Un protocolo de jugos naturales de 4 semanas para ayudar a desinflamar el abdomen, apoyar la limpieza natural del hígado, el intestino y los riñones e iniciar una pérdida de peso saludable con ingredientes que encuentras en cualquier supermercado.
+Más de 8.500 personas ya siguieron este protocolo y muchas lograron perder entre 3 y 7 kg y reducir la inflamación abdominal durante las primeras semanas, acompañado de hábitos saludables.</p>
+                <div class="hero-warn">
+                    <div class="hero-warn-title"><i class="fa-solid fa-triangle-exclamation"></i> IMPORTANTE</div>
+                    <div class="hero-warn-text">Este quiz es confidencial. Tus respuestas arman un <strong>menú de jugos detox específico para tu cuerpo y tu objetivo</strong>.</div>
+                </div>
+                <button class="btn btn-pulse" onclick="nextScreen()">
+                    <i class="fa-solid fa-play"></i>
+                    TU VIAJE COMIENZA AHORA
+                </button>
+            </div>
+        <img src="https://eva.igorstorm.com/capasite/ansiedade.jpg" style="margin:14px auto;max-width:560px;padding:12px;font-family:inherit;display:block;width:90%;border-radius:12px" alt=""></div><div class="screen" id="screen-2" data-screen="2" data-editable-section="s2">
+            <div class="quiz-header">
+                <h2>¿Cuál es tu <span class="accent">objetivo principal?</span> </h2>
+                <p>Cada objetivo tiene una combinación específica de hojas y frutas — vamos a enfocarnos.</p>
+            </div>
+            <div class="quiz-options" data-question="s2">
+                <div class="quiz-option" onclick="selectOption(this)">
+                    <div class="quiz-option-icon"><i class="fa-solid fa-spa"></i></div>
+                    <div class="quiz-option-content">
+                        <div class="quiz-option-text">Eliminar la hinchazón</div>
+                        <div class="quiz-option-desc">Diuréticos naturales + drenantes</div>
+                    </div>
+                    <div class="quiz-option-check"></div>
+                </div>
+                <div class="quiz-option" onclick="selectOption(this)">
+                    <div class="quiz-option-icon"><i class="fa-solid fa-spa"></i></div>
+                    <div class="quiz-option-content">
+                        <div class="quiz-option-text">Detox del hígado</div>
+                        <div class="quiz-option-desc">Hojas verdes + cítricos amargos</div>
+                    </div>
+                    <div class="quiz-option-check"></div>
+                </div>
+                <div class="quiz-option" onclick="selectOption(this)">
+                    <div class="quiz-option-icon"><i class="fa-solid fa-spa"></i></div>
+                    <div class="quiz-option-content">
+                        <div class="quiz-option-text">Limpiar el intestino</div>
+                        <div class="quiz-option-desc">Fibras + probióticos naturales</div>
+                    </div>
+                    <div class="quiz-option-check"></div>
+                </div>
+                <div class="quiz-option" onclick="selectOption(this)">
+                    <div class="quiz-option-icon"><i class="fa-solid fa-leaf"></i></div>
+                    <div class="quiz-option-content">
+                        <div class="quiz-option-text">Adelgazar con salud</div>
+                        <div class="quiz-option-desc">Cierre metabólico + saciedad</div>
+                    </div>
+                    <div class="quiz-option-check"></div>
+                </div>
+            </div>
+            <div class="quiz-nav">
+                <button class="btn btn-secondary" onclick="prevScreen()"><i class="fa-solid fa-arrow-left"></i></button>
+                <button class="btn" id="next-s2" disabled="">Continuar <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        </div><div class="screen" id="screen-3" data-screen="3" data-editable-section="s3">
+            <div class="quiz-header">
+                <h2>¿Cómo está <span class="accent">tu intestino actualmente?</span></h2>
+                <p>Un intestino saludable es la base de la desintoxicación — vamos a entenderlo.</p>
+            </div>
+            <div class="quiz-options quiz-multi" data-question="s3" data-multi="true">
+                <div class="quiz-option" onclick="selectMultiple(this)">
+                    <div class="quiz-option-icon"><i class="fa-solid fa-leaf"></i></div>
+                    <div class="quiz-option-content"><div class="quiz-option-text">Estreñido y trancado</div></div>
+                    <div class="quiz-option-check"></div>
+                </div>
+                <div class="quiz-option" onclick="selectMultiple(this)">
+                    <div class="quiz-option-icon"><i class="fa-solid fa-bullseye"></i></div>
+                    <div class="quiz-option-content"><div class="quiz-option-text">Irregular</div></div>
+                    <div class="quiz-option-check"></div>
+                </div>
+                <div class="quiz-option" onclick="selectMultiple(this)">
+                    <div class="quiz-option-icon"><i class="fa-solid fa-leaf"></i></div>
+                    <div class="quiz-option-content"><div class="quiz-option-text">Demasiado suelto</div></div>
+                    <div class="quiz-option-check"></div>
+                </div>
+                <div class="quiz-option" onclick="selectMultiple(this)">
+                    <div class="quiz-option-icon"><i class="fa-solid fa-bullseye"></i></div>
+                    <div class="quiz-option-content"><div class="quiz-option-text">Normal</div></div>
+                    <div class="quiz-option-check"></div>
+                </div>
+                <div class="quiz-option" onclick="selectMultiple(this)">
+                    <div class="quiz-option-icon"><i class="fa-solid fa-leaf"></i></div>
+                    <div class="quiz-option-content"><div class="quiz-option-text">Con gases e hinchazón</div></div>
+                    <div class="quiz-option-check"></div>
+                </div>
+            </div>
+            <button class="btn" onclick="nextScreen()">Continuar <i class="fa-solid fa-arrow-right"></i></button>
+        </div><div class="screen" id="screen-4" data-screen="4" data-editable-section="s4">
+            <div class="quiz-header">
+                <h2>¿Cuál es tu mayor <span class="accent">señal de intoxicación?</span> </h2>
+                <p>Reconocer la señal acelera el protocolo correcto.</p>
+            </div>
+            <div class="quiz-options" data-question="s4">
+                <div class="quiz-option" onclick="selectOption(this)">
+                    <div class="quiz-option-icon"><i class="fa-solid fa-chevron-right"></i></div>
+                    <div class="quiz-option-content">
+                        <div class="quiz-option-text">Piel opaca y acné</div>
+                        <div class="quiz-option-desc">Hígado sobrecargado</div>
+                    </div>
+                    <div class="quiz-option-check"></div>
+                </div>
+                <div class="quiz-option" onclick="selectOption(this)">
+                    <div class="quiz-option-icon"><i class="fa-solid fa-chevron-right"></i></div>
+                    <div class="quiz-option-content">
+                        <div class="quiz-option-text">Hinchazón corporal</div>
+                        <div class="quiz-option-desc">Retención y linfa estancada</div>
+                    </div>
+                    <div class="quiz-option-check"></div>
+                </div>
+                <div class="quiz-option" onclick="selectOption(this)">
+                    <div class="quiz-option-icon"><i class="fa-solid fa-chevron-right"></i></div>
+                    <div class="quiz-option-content">
+                        <div class="quiz-option-text">Cansancio persistente</div>
+                        <div class="quiz-option-desc">Las toxinas roban energía</div>
+                    </div>
+                    <div class="quiz-option-check"></div>
+                </div>
+                <div class="quiz-option" onclick="selectOption(this)">
+                    <div class="quiz-option-icon"><i class="fa-solid fa-chevron-right"></i></div>
+                    <div class="quiz-option-content">
+                        <div class="quiz-option-text">Dolores de cabeza</div>
+                        <div class="quiz-option-desc">Señal de intoxicación digestiva</div>
+                    </div>
+                    <div class="quiz-option-check"></div>
+                </div>
+            </div>
+            <div class="quiz-nav">
+                <button class="btn btn-secondary" onclick="prevScreen()"><i class="fa-solid fa-arrow-left"></i></button>
+                <button class="btn" id="next-s4" disabled="">Continuar <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        </div><div class="screen" id="screen-5" data-screen="5" data-editable-section="s5">
+            <div class="quiz-header">
+                <h2>¿Cuál es tu <span class="accent">primer nombre?</span></h2>
+                <p>Quiero personalizar tu plan de detox — tu cuerpo es único.</p>
+            </div>
+            <div class="name-input-wrap">
+                <label class="name-label">Tu nombre completo no es necesario, solo el primero:</label>
+                <input type="text" class="name-input" id="userName" placeholder="Escribe tu primer nombre aqui..." oninput="onNameInput(this)">
+                <div class="name-privacy">
+                    <i class="fa-solid fa-lock"></i>
+                    <span><strong>100% Privado y Seguro.</strong> Usamos tu nombre solo para personalizar tu experiencia. Nunca lo compartiremos con terceros.</span>
+                </div>
+            </div>
+            <button class="btn" id="next-s5" onclick="nextScreen()" disabled="">Continuar Mi Transformacion <i class="fa-solid fa-arrow-right"></i></button>
+        </div><div class="screen" id="screen-6" data-screen="6" data-editable-section="s6">
+            <div class="quiz-header">
+                <h2>¿Cómo te sientes <span class="accent">con tu cuerpo hoy?</span> </h2>
+                <p>Entender el impacto real nos ayuda a crear el plan correcto.</p>
+            </div>
+            <div class="quiz-options" data-question="s6">
+                <div class="quiz-option" onclick="selectOption(this)">
+                    <div class="quiz-option-icon"><i class="fa-solid fa-meh"></i></div>
+                    <div class="quiz-option-content">
+                        <div class="quiz-option-text">Pesada</div>
+                        <div class="quiz-option-desc">Como si estuviera cargando un peso</div>
+                    </div>
+                    <div class="quiz-option-check"></div>
+                </div>
+                <div class="quiz-option" onclick="selectOption(this)">
+                    <div class="quiz-option-icon"><i class="fa-solid fa-face-sad-tear"></i></div>
+                    <div class="quiz-option-content">
+                        <div class="quiz-option-text">Frustrada</div>
+                        <div class="quiz-option-desc">Intenté dietas y no funcionan</div>
+                    </div>
+                    <div class="quiz-option-check"></div>
+                </div>
+                <div class="quiz-option" onclick="selectOption(this)">
+                    <div class="quiz-option-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+                    <div class="quiz-option-content">
+                        <div class="quiz-option-text">Esperanzada</div>
+                        <div class="quiz-option-desc">Quiero un cambio natural</div>
+                    </div>
+                    <div class="quiz-option-check"></div>
+                </div>
+                <div class="quiz-option" onclick="selectOption(this)">
+                    <div class="quiz-option-icon"><i class="fa-solid fa-rocket"></i></div>
+                    <div class="quiz-option-content">
+                        <div class="quiz-option-text">Decidida</div>
+                        <div class="quiz-option-desc">Voy a limpiar mi cuerpo</div>
+                    </div>
+                    <div class="quiz-option-check"></div>
+                </div>
+            </div>
+            <div class="typing-box" id="typing-s6" style="display:none">
+                <div class="typing-text" id="typing-text-s6">Te entiendo... un cuerpo intoxicado lo afecta todo — el humor, la energía, la piel.</div>
+            </div>
+            <button class="btn" id="next-s6" onclick="nextScreen()" style="display:none">Continuar <i class="fa-solid fa-arrow-right"></i></button>
+        </div><div class="screen" id="screen-7" data-screen="7" data-editable-section="s7">
+            <div class="quiz-header">
+                <h2>¿Ya intentaste <span class="accent">hacer detox antes?</span></h2>
+                <p>Sin juicios. Cada intento es aprendizaje.</p>
+            </div>
+            <div class="quiz-options" data-question="s7">
+                <div class="quiz-option" onclick="selectOption(this)">
+                    <div class="quiz-option-icon"><i class="fa-solid fa-rotate"></i></div>
+                    <div class="quiz-option-content">
+                        <div class="quiz-option-text">Nunca hice detox</div>
+                        <div class="quiz-option-desc">Quiero empezar con un método</div>
+                    </div>
+                    <div class="quiz-option-check"></div>
+                </div>
+                <div class="quiz-option" onclick="selectOption(this)">
+                    <div class="quiz-option-icon"><i class="fa-solid fa-arrows-rotate"></i></div>
+                    <div class="quiz-option-content">
+                        <div class="quiz-option-text">Intenté la dieta de la sopa</div>
+                        <div class="quiz-option-desc">Sufrí mucho y recuperé todo</div>
+                    </div>
+                    <div class="quiz-option-check"></div>
+                </div>
+                <div class="quiz-option" onclick="selectOption(this)">
+                    <div class="quiz-option-icon"><i class="fa-solid fa-seedling"></i></div>
+                    <div class="quiz-option-content">
+                        <div class="quiz-option-text">Jugo detox industrializado</div>
+                        <div class="quiz-option-desc">Caro y lleno de azúcar</div>
+                    </div>
+                    <div class="quiz-option-check"></div>
+                </div>
+            </div>
+            <div class="typing-box" id="typing-s7" style="display:none">
+                <div class="typing-text" id="typing-text-s7">¡Genial! Te voy a mostrar la diferencia del método científico.</div>
+            </div>
+            <button class="btn" id="next-s7" onclick="nextScreen()" style="display:none">Continuar <i class="fa-solid fa-arrow-right"></i></button>
+        </div><div class="screen" id="screen-8" data-screen="8" data-editable-section="s8">
+            <div class="quiz-header">
+                <h2>¿Cuánto tiempo al día tienes <span class="accent">para preparar</span> los jugos?</h2>
+                <p>Resolveremos este obstáculo juntos con Suco Detox.</p>
+            </div>
+            <div class="quiz-options" data-question="s8">
+                <div class="quiz-option" onclick="selectOption(this)">
+                    <div class="quiz-option-icon"><i class="fa-solid fa-clock"></i></div>
+                    <div class="quiz-option-content">
+                        <div class="quiz-option-text">5 minutos</div>
+                        <div class="quiz-option-desc">Recetas exprés</div>
+                    </div>
+                    <div class="quiz-option-check"></div>
+                </div>
+                <div class="quiz-option" onclick="selectOption(this)">
+                    <div class="quiz-option-icon"><i class="fa-solid fa-clock"></i></div>
+                    <div class="quiz-option-content">
+                        <div class="quiz-option-text">10 minutos</div>
+                        <div class="quiz-option-desc">LO IDEAL — receta completa</div>
+                    </div>
+                    <div class="quiz-option-check"></div>
+                </div>
+                <div class="quiz-option" onclick="selectOption(this)">
+                    <div class="quiz-option-icon"><i class="fa-solid fa-clock"></i></div>
+                    <div class="quiz-option-content">
+                        <div class="quiz-option-text">15-20 minutos</div>
+                        <div class="quiz-option-desc">Incluye lavado de las hojas</div>
+                    </div>
+                    <div class="quiz-option-check"></div>
+                </div>
+                <div class="quiz-option" onclick="selectOption(this)">
+                    <div class="quiz-option-icon"><i class="fa-solid fa-clock"></i></div>
+                    <div class="quiz-option-content">
+                        <div class="quiz-option-text">El tiempo que haga falta</div>
+                        <div class="quiz-option-desc">Quiero volverme experta en jugos</div>
+                    </div>
+                    <div class="quiz-option-check"></div>
+                </div>
+                <div class="quiz-option" onclick="selectOption(this)">
+                    <div class="quiz-option-icon"><i class="fa-solid fa-clock"></i></div>
+                    <div class="quiz-option-content">
+                        <div class="quiz-option-text">Miedo a Cambiar Hábitos</div>
+                        <div class="quiz-option-desc">El cambio parece demasiado difícil</div>
+                    </div>
+                    <div class="quiz-option-check"></div>
+                </div>
+            </div>
+            <div class="quiz-nav">
+                <button class="btn btn-secondary" onclick="prevScreen()"><i class="fa-solid fa-arrow-left"></i></button>
+                <button class="btn" id="next-s8" disabled="">Continuar <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        </div><div class="screen" id="screen-9" data-screen="9" data-editable-section="s9">
+            <div class="quiz-header">
+                <h2>¿Estás lista <span class="accent">para tomar 1 jugo por día</span> durante 21 días?</h2>
+                <p>El detox real ocurre en 21 días — el tiempo de regeneración del hígado y de la microbiota. Pero requiere constancia — saltarte días reinicia el protocolo.</p>
+            </div>
+            <div class="quiz-options quiz-multi" data-question="s9" data-multi="true">
+                <div class="quiz-option" onclick="selectMultiple(this)">
+                    <div class="quiz-option-icon"><i class="fa-solid fa-bolt"></i></div>
+                    <div class="quiz-option-content"><div class="quiz-option-text">Sí, 100% comprometida</div></div>
+                    <div class="quiz-option-check"></div>
+                </div>
+                <div class="quiz-option" onclick="selectMultiple(this)">
+                    <div class="quiz-option-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                    <div class="quiz-option-content"><div class="quiz-option-text">Voy a dar lo mejor de mí</div></div>
+                    <div class="quiz-option-check"></div>
+                </div>
+                <div class="quiz-option" onclick="selectMultiple(this)">
+                    <div class="quiz-option-icon"><i class="fa-solid fa-gem"></i></div>
+                    <div class="quiz-option-content"><div class="quiz-option-text">Tengo dudas</div></div>
+                    <div class="quiz-option-check"></div>
+                </div>
+                <div class="quiz-option" onclick="selectMultiple(this)">
+                    <div class="quiz-option-icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <div class="quiz-option-content"><div class="quiz-option-text">Eliminar Dolores</div></div>
+                    <div class="quiz-option-check"></div>
+                </div>
+                <div class="quiz-option" onclick="selectMultiple(this)">
+                    <div class="quiz-option-icon"><i class="fa-solid fa-users"></i></div>
+                    <div class="quiz-option-content"><div class="quiz-option-text">Controlar Enfermedades</div></div>
+                    <div class="quiz-option-check"></div>
+                </div>
+                <div class="quiz-option" onclick="selectMultiple(this)">
+                    <div class="quiz-option-icon"><i class="fa-solid fa-infinity"></i></div>
+                    <div class="quiz-option-content"><div class="quiz-option-text">Vivir con Más Calidad</div></div>
+                    <div class="quiz-option-check"></div>
+                </div>
+            </div>
+            <button class="btn" onclick="nextScreen()">Ver Mi Guía de Salud <i class="fa-solid fa-arrow-right"></i></button>
+        </div><div class="screen" id="screen-10" data-screen="10" data-editable-section="s10">
+            <div class="revelation-section">
+                <div class="revelation-img-wrap">
+                    <div class="revelation-img-label">TU PLAN DETOX ESTÁ LISTO</div>
+                    <img src="https://eva.igorstorm.com/capapv/sucodetox" alt="Reinicio Digestivo™ " class="revelation-image">
+                </div>
+                <div class="success-box">
+                    <h3><i class="fa-solid fa-check-circle"></i> PLAN PERSONALIZADO</h3>
+                    <p>Con base en tus respuestas, identificamos tu nivel de intoxicación y la combinación de jugos ideal. Recibe el plan + 4 bonos exclusivos.</p>
+                </div>
+                <button class="btn btn-pulse" onclick="nextScreen()">VER MI PLAN <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        </div><div class="screen" id="screen-11" data-screen="11" data-editable-section="s11">
+            <div class="quiz-header">
+                <div class="quiz-step"><i class="fa-solid fa-comments"></i> TRANSFORMACIONES REALES Y DOCUMENTADAS</div>
+            </div>
+            <div class="testimonial-inline">
+                <div class="testimonial-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p>"Tuve hinchazón de piernas y barriga durante 5 años, pensé que era genética. Empecé el jugo verde de col rizada con limón y jengibre todos los días en ayunas. En 14 días la hinchazón desapareció, bajé 4kg y el anillo volvió a entrar. Sin dietas dolorosas."</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">D</div>
+                    <div class="testimonial-name">Daniela Posada Lacerna</div>
+                </div>
+            </div>
+            <div class="testimonial-inline">
+                <div class="testimonial-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p>"Estreñimiento crónico durante 10 años, dependía de laxantes. Empecé el jugo de col rizada + piña + linaza molida todos los días. En 7 días el intestino volvió a funcionar solo. En 21 días perdí la hinchazón de la barriga y la piel se aclaró."</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">R</div>
+                    <div class="testimonial-name">Roberta Santana Vergara</div>
+                </div>
+            </div>
+            <div class="typing-box" id="typing-s11" style="display:none">
+                <div class="typing-text" id="typing-text-s11">¿Sabías que también iba a funcionar para ti?</div>
+            </div>
+            <button class="btn btn-pulse" id="next-s11" onclick="nextScreen()" style="display:none">QUIERO LOS MISMOS RESULTADOS <i class="fa-solid fa-arrow-right"></i></button>
+        </div><div class="screen" id="screen-14" data-screen="14" data-editable-section="s14">
+            <div class="quiz-header">
+                <h2>¿Cuál es tu <span class="accent">disponibilidad para las recetas?</span></h2>
+                <p>El detox funciona con constancia — más que con ingredientes caros.</p>
+            </div>
+            <div class="quiz-options" data-question="s14">
+                <div class="quiz-option" onclick="selectOption(this)">
+                    <div class="quiz-option-icon"><i class="fa-solid fa-bolt"></i></div>
+                    <div class="quiz-option-content">
+                        <div class="quiz-option-text">5 min/día</div>
+                        <div class="quiz-option-desc">Jugos exprés</div>
+                    </div>
+                    <div class="quiz-option-check"></div>
+                </div>
+                <div class="quiz-option" onclick="selectOption(this)">
+                    <div class="quiz-option-icon"><i class="fa-solid fa-clock"></i></div>
+                    <div class="quiz-option-content">
+                        <div class="quiz-option-text">10 min/día</div>
+                        <div class="quiz-option-desc">LO IDEAL</div>
+                    </div>
+                    <div class="quiz-option-check"></div>
+                </div>
+                <div class="quiz-option" onclick="selectOption(this)">
+                    <div class="quiz-option-icon"><i class="fa-solid fa-hourglass-half"></i></div>
+                    <div class="quiz-option-content">
+                        <div class="quiz-option-text">15-20 min/día</div>
+                        <div class="quiz-option-desc">Lavado + preparación completa</div>
+                    </div>
+                    <div class="quiz-option-check"></div>
+                </div>
+                <div class="quiz-option" onclick="selectOption(this)">
+                    <div class="quiz-option-icon"><i class="fa-solid fa-fire"></i></div>
+                    <div class="quiz-option-content">
+                        <div class="quiz-option-text">30 min/día</div>
+                        <div class="quiz-option-desc">Jugos elaborados</div>
+                    </div>
+                    <div class="quiz-option-check"></div>
+                </div>
+            </div>
+            <div class="quiz-nav">
+                <button class="btn btn-secondary" onclick="prevScreen()"><i class="fa-solid fa-arrow-left"></i></button>
+                <button class="btn" id="next-s14" disabled="">Continuar <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        </div><div class="screen" id="screen-15" data-screen="15" data-editable-section="s15">
+            <div class="loading-screen">
+                <div class="loading-icon"><i class="fa-solid fa-brain"></i></div>
+                <h2><span class="highlight">Analizando tu nivel de intoxicación...</span></h2>
+                <p>Cruzando con +8.500 casos similares</p>
+                <div class="loading-spinner" aria-label="Análisis nutricional en curso"></div>
+                <div class="loading-dots"><span></span><span></span><span></span></div>
+                <div class="loading-bar-wrap">
+                    <div class="loading-bar-fill" id="loadingBar1"></div>
+                </div>
+                <div class="loading-percent" id="loadingPercent1">0%</div>
+                <p style="font-size:0.8rem; margin-top:12px;">Cruzando intoxicación, intestino y síntomas para armar el plan detox ideal para ti...</p>
+            </div>
+        </div><div class="screen" id="screen-16" data-screen="16" data-editable-section="s16">
+            <div class="loading-screen">
+                <div class="loading-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                <h2><span class="highlight">Armando tu plan de 21 días...</span></h2>
+                <p>Casi listo — preparando tu plan de limpieza orgánica</p>
+                <div class="loading-spinner" aria-label="Plan generándose"></div>
+                <div class="loading-dots"><span></span><span></span><span></span></div>
+                <div class="loading-bar-wrap">
+                    <div class="loading-bar-fill" id="loadingBar2"></div>
+                </div>
+                <div class="loading-percent" id="loadingPercent2">0%</div>
+                <div class="success-box" id="loading2Success" style="display:none; margin-top:20px;">
+                    <h3><i class="fa-solid fa-check-circle"></i> ¡TU PLAN ESTÁ CASI LISTO!</h3>
+                    <p>Finalizando recetas, lista de compras y cronograma personalizado. En segundos.</p>
+                </div>
+            </div>
+        </div><div class="screen" id="screen-17" data-screen="17" data-editable-section="s17">
+            <div class="risk-section">
+                <div class="risk-header">
+                    <h2>PURIFICA TU CUERPO HOY <span id="userNameDisplay"></span>! Tus respuestas revelan algo IMPORTANTE...</h2>
+                </div>
+                <p class="risk-text">Con base en tus respuestas, tu organismo está en</p>
+                <div style="text-align:center">
+                    <div class="risk-badge"><i class="fa-solid fa-triangle-exclamation"></i> ZONA DE INTOXICACIÓN</div>
+                </div>
+                <div class="warn-box">
+                    <h4><i class="fa-solid fa-exclamation-circle"></i> LA INTOXICACIÓN CRÓNICA SOBRECARGA EL HÍGADO EN UN 47%</h4>
+                    <p>Las toxinas acumuladas reducen la absorción de nutrientes un 35%, aceleran el envejecimiento celular y sobrecargan el hígado y los riñones. Resultado: cansancio, hinchazón, acné, dolores de cabeza — síntomas que se convierten en enfermedad en 4-7 años.</p>
+                </div>
+                <div class="alert-list">
+                    <div class="alert-item"><i class="fa-solid fa-xmark"></i> <span><strong>El hígado sobrecargado se convierte en grasa hepática:</strong> el 30% de los adultos tiene esteatosis silenciosa que evoluciona a cirrosis en 8-12 años</span></div>
+                    <div class="alert-item"><i class="fa-solid fa-xmark"></i> <span><strong>El jugo industrial pasteuriza los nutrientes:</strong> el proceso a 90°C destruye el 65% de las enzimas — el casero tiene 100% de biodisponibilidad</span></div>
+                    <div class="alert-item"><i class="fa-solid fa-xmark"></i> <span><strong>La dieta de la sopa rompe el metabolismo:</strong> la restricción extrema genera efecto rebote en el 90% de los casos — el jugo detox alimenta la desintoxicación sin trauma</span></div>
+                    <div class="alert-item"><i class="fa-solid fa-xmark"></i> <span><strong>La microbiota intestinal necesita fibra soluble:</strong> el 80% de las personas no consume lo suficiente — el jugo verde lo corrige en 14 días</span></div>
+                </div>
+                <div class="good-news-box">
+                    <h4><i class="fa-solid fa-circle-check"></i> LA BUENA NOTICIA:</h4>
+                    <p>El método Jugo Detox fue creado para resolver EXACTAMENTE esto. En 21 días, +8.500 personas limpiaron hígado e intestino, perdieron la hinchazón y ganaron vitalidad con jugos verdes naturales — sin dietas dolorosas.</p>
+                </div>
+                <button class="btn btn-pulse" onclick="nextScreen()">SÍ, QUIERO UN CUERPO LIMPIO <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        </div><div class="screen" id="screen-19" data-screen="19" data-editable-section="s19">
+            <div class="quiz-header">
+                <div class="quiz-step"><i class="fa-solid fa-gift"></i> BONOS EXCLUSIVOS — TODO INCLUIDO</div>
+                <p>El método Reinicio Digestivo fue creado para resolver EXACTAMENTE esto. En 21 días, +8.500 personas limpiaron hígado e intestino, perdieron la hinchazón y ganaron vitalidad con jugos verdes naturales — sin dietas dolorosas.</p>
+            </div>
+            <div class="bonus-grid">
+                <div class="bonus-card">
+                    <div class="bonus-num">#1</div>
+                    <h4>Ebook Jugo Detox Científico (US$ 19)</h4>
+                    <p>6 capítulos: detox, intestino, hidratación.</p>
+                </div>
+                <div class="bonus-card">
+                    <div class="bonus-num">#2</div>
+                    <h4>Podcast Cuerpo Limpio (US$ 13)</h4>
+                    <p>6 audios con nutriólogos.</p>
+                </div>
+                <div class="bonus-card">
+                    <div class="bonus-num">#3</div>
+                    <h4>Banco de Reels: 52 Recetas (US$ 19)</h4>
+                    <p>Videos con la preparación de los jugos.</p>
+                </div>
+                <div class="bonus-card">
+                    <div class="bonus-num">#4</div>
+                    <h4>Sección de Noticias Detox (US$ 13)</h4>
+                    <p>Estudios y nuevos superalimentos.</p>
+                </div>
+            </div>
+            <div class="typing-box" id="typing-s19" style="display:none">
+                <div class="typing-text" id="typing-text-s19">Estos 4 bonus exclusivos tienen un valor increible y recibes TODO de regalo hoy! Es mucho mas que el valor de la inversion!</div>
+            </div>
+            <button class="btn btn-pulse" id="next-s19" onclick="nextScreen()" style="display:none">QUIERO LIMPIAR MI CUERPO AHORA <i class="fa-solid fa-arrow-right"></i></button>
+        <div style="margin:14px auto;max-width:560px;padding:12px;font-family:inherit;text-align:center;font-size:1rem;line-height:1.6">Texto editavel — clique pra editar</div></div><div class="screen" id="screen-20" data-screen="20" data-editable-section="s20">
+            <div class="offer-section">
+                <div class="offer-badge"><i class="fa-solid fa-mobile-screen"></i> ACCESO COMPLETO AL MÉTODO</div>
+                <h2>Todo lo que necesitas para <span class="accent">jugo detox purificador</span> en un solo lugar</h2>
+                <p>Ahora tienes acceso a TODOS los recursos en una app premium y facil de usar, disponible 24 horas al dia en tu celular!</p>
+
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <i class="fa-solid fa-mobile-screen"></i>
+                        <h4>Plan de 21 Días</h4>
+                        <p>Recetas progresivas con clorofila y fibras</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fa-solid fa-hand-holding-heart"></i>
+                        <h4>Sin Sufrimiento</h4>
+                        <p>Saciedad natural — sin dieta restrictiva</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        <h4>Para Cada Objetivo</h4>
+                        <p>Hígado, intestino, drenaje, adelgazamiento</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fa-solid fa-bolt"></i>
+                        <h4>Acceso de por Vida</h4>
+                        <p>Vuelve siempre que necesites repasar</p>
+                    </div>
+                </div>
+
+                <div class="offer-card">
+                    <img src="https://eva.igorstorm.com/capapv/sucodetox" alt="Reinicio Digestivo™ " class="offer-card-image">
+                    <h3 style="font-size:1.2rem; margin-bottom:16px;">Reinicio Digestivo™ </h3>
+                    <ul class="offer-list">
+                        <li><i class="fa-solid fa-mobile-screen-button"></i> <div>Reinicio Digestivo™ <br><span class="offer-item-desc">Acceso completo a todos los recursos en tu celular</span></div></li>
+                        <li><i class="fa-solid fa-check"></i> <div>Contenido Principal Completo<br><span class="offer-item-desc">Guia definitiva con todos los secretos y tecnicas</span></div></li>
+                        <li><i class="fa-solid fa-check"></i> <div>Material de Estudio Exclusivo<br><span class="offer-item-desc">Contenido premium actualizado semanalmente</span></div></li>
+                        <li><i class="fa-solid fa-check"></i> <div>Podcast con Especialistas<br><span class="offer-item-desc">Episodios con especialistas en cada area</span></div></li>
+                        <li><i class="fa-solid fa-check"></i> <div>Videoclases Completas<br><span class="offer-item-desc">Tutoriales y demostraciones practicas</span></div></li>
+                        <li><i class="fa-solid fa-check"></i> <div>Soporte VIP en el App<br><span class="offer-item-desc">Resuelve dudas directamente en la aplicacion</span></div></li>
+                        <li><i class="fa-solid fa-check"></i> <div>Acceso Vitalicio<br><span class="offer-item-desc">Actualizaciones gratuitas para siempre!</span></div></li>
+                    </ul>
+                    <div class="offer-highlight">
+                        RECIBES TODOS LOS 4 BONUS EXCLUSIVOS EN EL APP!<br>
+                        <span style="font-size:0.75rem; font-weight:400; color:var(--text-muted);">(Valor Total de los Bonus incluido!)</span>
+                    </div>
+                    <div class="limited-badge"><i class="fa-solid fa-fire"></i> OFERTA POR TIEMPO LIMITADO</div>
+                    
+                    <div class="price-block">
+                        <div class="price-from">De</div>
+                        <div class="price-old">$ 197,00</div>
+                        <div class="price-for">Por solo</div>
+                        <div class="price-new"><span class="currency">$</span> 47,90</div>
+                    </div>
+                    <a href="https://pay.hotmart.com/O107174014D?checkoutMode=10" class="btn btn-pulse" onclick="if(typeof fbq!=='undefined')fbq('track','InitiateCheckout')">
+                        <i class="fa-solid fa-lock"></i> SÍ, QUIERO UN CUERPO LIMPIO
+                    </a>
+                    <div class="trust-row">
+                        <div class="trust-badge"><i class="fa-solid fa-shield-halved"></i> Satisfaccion<br>Garantizada</div>
+                        <div class="trust-badge"><i class="fa-solid fa-lock"></i> Compra 100%<br>Segura</div>
+                        <div class="trust-badge"><i class="fa-solid fa-bolt"></i> Acceso<br>Inmediato</div>
+                    </div>
+                    <div class="payment-badges" style="display:flex;justify-content:center;gap:8px;margin-top:12px;flex-wrap:wrap"><span style="display:inline-flex;align-items:center;gap:4px;padding:4px 10px;background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);border-radius:6px;font-size:.65rem;color:#22c55e;font-weight:600"><i class="fa-solid fa-shield-halved"></i> SSL</span><span style="display:inline-flex;align-items:center;gap:4px;padding:4px 10px;background:rgba(59,130,246,.08);border:1px solid rgba(59,130,246,.2);border-radius:6px;font-size:.65rem;color:#3b82f6;font-weight:600"><i class="fa-brands fa-pix"></i> PIX</span><span style="display:inline-flex;align-items:center;gap:4px;padding:4px 10px;background:rgba(249,115,22,.08);border:1px solid rgba(249,115,22,.2);border-radius:6px;font-size:.65rem;color:#f97316;font-weight:600"><i class="fa-brands fa-cc-visa"></i> <i class="fa-solid fa-star"></i></span></div>
+                </div>
+                <button class="btn btn-secondary" onclick="nextScreen()" style="margin-top:8px;">
+                    <i class="fa-solid fa-star"></i> TODO LO QUE RECIBES:
+                </button>
+            </div>
+        </div><div class="screen" id="screen-21" data-screen="21" data-editable-section="s21">
+            <div class="final-section" style="text-align:center;">
+                <img src="https://i.ibb.co/vtj6N4Q/WEBP2.webp" alt="Reinicio Digestivo™ " class="hero-image">
+                <div class="hero-badge"><i class="fa-solid fa-trophy"></i> PLAN + 4 BONOS</div>
+                <h1 style="font-size:1.5rem; margin:16px 0 12px;">Limpia y desinflama tu cuerpo con jugos naturales en solo 4 semanas.</h1>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:24px;">Y deja de pagar por jugo industrializado caro que viene lleno de azúcar.</p>
+
+                <a href="https://pay.hotmart.com/O107174014D?checkoutMode=10" class="btn btn-pulse" onclick="if(typeof fbq!=='undefined')fbq('track','InitiateCheckout')" style="margin-bottom:24px;">
+                    <i class="fa-solid fa-cart-shopping"></i> SÍ, QUIERO UN CUERPO LIMPIO
+                </a>
+
+                <!-- Guarantee -->
+                <div class="guarantee-section">
+                    <div class="guarantee-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <div class="guarantee-text">
+                        <h4>Garantía Blindada de 7 Días</h4>
+                        <p>Si en 7 días tomando los jugos no notas menos hinchazón o más energía, te devolvemos el 100%. Y te quedas con TODOS los bonos incluso si pides el reembolso.</p>
+                    </div>
+                </div>
+
+                <!-- Testimonials -->
+                <div class="testimonials-section">
+                    <h3><i class="fa-solid fa-comments" style="color:var(--primary)"></i> TRANSFORMACIONES REALES Y DOCUMENTADAS</h3>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <p>"Tuve hinchazón de piernas y barriga durante 5 años, pensé que era genética. Empecé el jugo verde de col rizada con limón y jengibre todos los días en ayunas. En 14 días la hinchazón desapareció, bajé 4kg y el anillo volvió a entrar. Sin dietas dolorosas."</p>
+                        <div class="testimonial-author"><div class="testimonial-avatar">D</div><div class="testimonial-name">Daniela Posada Lacerna</div></div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <p>"Estreñimiento crónico durante 10 años, dependía de laxantes. Empecé el jugo de col rizada + piña + linaza molida todos los días. En 7 días el intestino volvió a funcionar solo. En 21 días perdí la hinchazón de la barriga y la piel se aclaró."</p>
+                        <div class="testimonial-author"><div class="testimonial-avatar">R</div><div class="testimonial-name">Roberta Santana Vergara</div></div>
+                    </div>
+                </div>
+
+                <!-- FAQ -->
+                <div class="faq-section">
+                    <h3><i class="fa-solid fa-circle-question" style="color:var(--primary)"></i> Preguntas Frecuentes</h3>
+                    
+                </div>
+
+                <!-- Final CTA -->
+                <div style="margin:28px 0;">
+                    <a href="https://pay.hotmart.com/O107174014D?checkoutMode=10" class="btn btn-pulse" onclick="if(typeof fbq!=='undefined')fbq('track','InitiateCheckout')">
+                        <i class="fa-solid fa-lock"></i> SÍ, QUIERO UN CUERPO LIMPIO
+                    </a>
+                </div>
+
+                <!-- Footer -->
+                <div class="footer">
+                    <p>(c) 2025 Reinicio Digestivo™ . Todos los derechos reservados. Este sitio no esta afiliado a Facebook ni a ninguna entidad de Facebook.</p>
+                    <p style="margin-top:6px;">
+                        <a href="#">Terminos de Uso</a> | <a href="#">Politica de Privacidad</a> | <a href="#">Contacto</a>
+                    </p>
+                </div>
+            </div>
+        </div></div><!-- /.container -->
+
+    <!-- ====== CONVERSION ELEMENTS ====== -->
+
+    <!-- Scarcity Bar (topo da oferta) -->
+    
+
+    <!-- Floating CTA (aparece após quiz) -->
+    
+
+    <!-- Social Proof Toast -->
+    
+
+    <!-- Exit-Intent Popup -->
+    
+
+    <!-- ====== JAVASCRIPT ====== -->
+    <script>
+        /* State */
+        var currentScreen = 1;
+        var totalScreens = 21;
+        var answers = {};
+        var userName = '';
+
+        /* Build DOM-ordered screen list (adapts to hidden/reordered sections) */
+        function getScreenList() {
+            return Array.from(document.querySelectorAll('.screen'));
+        }
+        function getScreenNum(el) {
+            return parseInt(el.getAttribute('data-screen') || '0');
+        }
+
+        /* Screen navigation mapping: which screen follows which for auto-advance */
+        var autoAdvanceMap = {
+            's2': 3, 's4': 5, 's6': 7, 's7': 8, 's8': 9,
+            's13': 14, 's14': 15
+        };
+
+        /* Screens with typing effect */
+        var typingScreens = {
+            6: { textId:'typing-text-s6', boxId:'typing-s6', btnId:'next-s6' },
+            7: { textId:'typing-text-s7', boxId:'typing-s7', btnId:'next-s7' },
+            11: { textId:'typing-text-s11', boxId:'typing-s11', btnId:'next-s11' },
+            19: { textId:'typing-text-s19', boxId:'typing-s19', btnId:'next-s19' }
+        };
+
+        /* ---- nextScreen / prevScreen — DOM-order aware ---- */
+        function nextScreen() {
+            var screens = getScreenList();
+            var curIdx = -1;
+            for (var i = 0; i < screens.length; i++) {
+                if (getScreenNum(screens[i]) === currentScreen) { curIdx = i; break; }
+            }
+            if (curIdx >= 0 && curIdx < screens.length - 1) {
+                goToScreen(getScreenNum(screens[curIdx + 1]));
+            }
+        }
+        function prevScreen() {
+            var screens = getScreenList();
+            var curIdx = -1;
+            for (var i = 0; i < screens.length; i++) {
+                if (getScreenNum(screens[i]) === currentScreen) { curIdx = i; break; }
+            }
+            if (curIdx > 0) {
+                goToScreen(getScreenNum(screens[curIdx - 1]));
+            }
+        }
+
+        /* ---- Screen Navigation ---- */
+        function goToScreen(n) {
+            var screens = getScreenList();
+            var validNums = screens.map(getScreenNum);
+            if (validNums.indexOf(n) === -1) {
+                // Tela não existe (foi removida), ir para a próxima disponível
+                var closest = validNums.filter(function(v){ return v > currentScreen; });
+                if (closest.length === 0) return;
+                n = closest[0];
+            }
+
+            var cur = document.getElementById('screen-' + currentScreen);
+            if (cur) cur.classList.remove('active');
+
+            currentScreen = n;
+            var target = document.getElementById('screen-' + n);
+            if (target) {
+                target.classList.remove('active');
+                void target.offsetWidth;
+                target.classList.add('active');
+            }
+
+            totalScreens = screens.length;
+            updateProgress();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            /* Loading screens */
+            if (n === 15) startLoading(1, 16);
+            if (n === 16) startLoading(2, 17);
+
+            /* Typing auto-start only for info screens (not radio+typing screens) */
+            if (n === 11) startTypingForScreen(11);
+            if (n === 19) startTypingForScreen(19);
+
+            /* S17 - show user name */
+            if (n === 17) {
+                var nameEl = document.getElementById('userNameDisplay');
+                if (nameEl) nameEl.textContent = userName || '';
+            }
+
+            /* FB Pixel tracking — full funnel */
+            if (typeof fbq !== 'undefined') {
+                fbq('trackCustom', 'ScreenView', { screen_number: n, app_name: document.title });
+                if (n === 2) fbq('trackCustom', 'QuizStart');
+                if (n === 15) fbq('trackCustom', 'QuizComplete');
+                if (n === 20) { fbq('track', 'ViewContent', { content_name: document.title }); fbq('trackCustom', 'OfferView'); }
+            }
+
+            /* GA4 tracking */
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'quiz_step', { step_number: n, app_name: document.title });
+            }
+
+            /* Notify conversion elements (floating CTA, scarcity bar) */
+            if (window._onScreenChange) {
+                window._onScreenChange.forEach(function(fn) { try { fn(n); } catch(e){} });
+            }
+
+            /* Editor: notify parent */
+            if (window.parent !== window) {
+                window.parent.postMessage({ type:'quizScreenChange', screen:n }, '*');
+            }
+        }
+
+        /* ---- Progress ---- */
+        function updateProgress() {
+            var screens = getScreenList();
+            var curIdx = 0;
+            for (var i = 0; i < screens.length; i++) {
+                if (getScreenNum(screens[i]) === currentScreen) { curIdx = i; break; }
+            }
+            var total = screens.length;
+            var pct = total > 1 ? (curIdx / (total - 1)) * 100 : 0;
+            var bar = document.getElementById('progressBar');
+            if (bar) bar.style.width = pct + '%';
+        }
+
+        /* ---- Radio Select (single) ---- */
+        function selectOption(el) {
+            var parent = el.parentElement;
+            var opts = parent.querySelectorAll('.quiz-option');
+            for (var i = 0; i < opts.length; i++) {
+                opts[i].classList.remove('selected');
+                var chk = opts[i].querySelector('.quiz-option-check');
+                if (chk) chk.innerHTML = '';
+            }
+            el.classList.add('selected');
+            var chk = el.querySelector('.quiz-option-check');
+            if (chk) chk.innerHTML = '<i class="fa-solid fa-check"></i>';
+
+            var qKey = parent.getAttribute('data-question');
+            var txt = el.querySelector('.quiz-option-text');
+            answers[qKey] = txt ? txt.textContent : '';
+
+            /* For screens with typing, show typing after selection */
+            if (typingScreens[currentScreen]) {
+                startTypingForScreen(currentScreen);
+                return; /* typing will show the button */
+            }
+
+            /* Auto-advance after delay for radio screens */
+            var nextScreenNum = autoAdvanceMap[qKey];
+            if (nextScreenNum) {
+                setTimeout(function() { goToScreen(nextScreenNum); }, 600);
+            } else {
+                /* Enable next button if exists */
+                var btn = document.getElementById('next-' + qKey);
+                if (btn) btn.disabled = false;
+            }
+        }
+
+        /* ---- Multi Select (checkbox) ---- */
+        function selectMultiple(el) {
+            el.classList.toggle('selected');
+            var chk = el.querySelector('.quiz-option-check');
+            if (chk) {
+                chk.innerHTML = el.classList.contains('selected') ? '<i class="fa-solid fa-check"></i>' : '';
+            }
+        }
+
+        /* ---- Name Input ---- */
+        function onNameInput(input) {
+            userName = input.value.trim();
+            var btn = document.getElementById('next-s5');
+            if (btn) btn.disabled = userName.length < 2;
+        }
+
+        /* ---- Age Slider ---- */
+        function updateAge(val) {
+            var el = document.getElementById('ageValue');
+            if (el) el.textContent = val;
+            answers.age = val;
+        }
+
+        /* ---- Typing Effect ---- */
+        function startTypingForScreen(screenNum) {
+            var cfg = typingScreens[screenNum];
+            if (!cfg) return;
+            var box = document.getElementById(cfg.boxId);
+            var textEl = document.getElementById(cfg.textId);
+            var btn = document.getElementById(cfg.btnId);
+            if (!box || !textEl) return;
+
+            var fullText = cfg.text;
+            if (fullText == null) {
+                if (cfg._cached == null) cfg._cached = textEl.textContent || '';
+                fullText = cfg._cached;
+            }
+
+            box.style.display = 'block';
+            textEl.innerHTML = '';
+            if (btn) btn.style.display = 'none';
+            var idx = 0;
+            var speed = 20;
+
+            function typeChar() {
+                if (idx < fullText.length) {
+                    /* Handle HTML tags - add them instantly */
+                    if (fullText[idx] === '<') {
+                        var closeIdx = fullText.indexOf('>', idx);
+                        if (closeIdx !== -1) {
+                            textEl.innerHTML += fullText.substring(idx, closeIdx + 1);
+                            idx = closeIdx + 1;
+                        } else {
+                            textEl.innerHTML += fullText[idx];
+                            idx++;
+                        }
+                    } else {
+                        textEl.innerHTML += fullText[idx];
+                        idx++;
+                    }
+                    setTimeout(typeChar, speed);
+                } else {
+                    /* Done typing - show button */
+                    if (btn) {
+                        btn.style.display = 'flex';
+                        btn.style.animation = 'slideUp 0.4s ease forwards';
+                    }
+                }
+            }
+            typeChar();
+        }
+
+        /* ---- Loading Animation ---- */
+        function startLoading(num, nextScreen) {
+            var bar = document.getElementById('loadingBar' + num);
+            var pct = document.getElementById('loadingPercent' + num);
+            if (!bar || !pct) return;
+
+            var progress = 0;
+            bar.style.width = '0%';
+            pct.textContent = '0%';
+
+            /* Show success box at 80% for loading 2 */
+            var successBox = num === 2 ? document.getElementById('loading2Success') : null;
+
+            var interval = setInterval(function() {
+                progress += Math.random() * 4 + 1;
+                if (progress > 100) progress = 100;
+
+                bar.style.width = Math.round(progress) + '%';
+                pct.textContent = Math.round(progress) + '%';
+
+                if (successBox && progress >= 80) {
+                    successBox.style.display = 'block';
+                    successBox.style.animation = 'scaleIn 0.4s ease forwards';
+                }
+
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    setTimeout(function() {
+                        goToScreen(nextScreen);
+                    }, 800);
+                }
+            }, 80);
+        }
+
+        /* ---- FAQ Toggle ---- */
+        function toggleFaq(el) {
+            var item = el.parentElement;
+            var isOpen = item.classList.contains('open');
+            var all = document.querySelectorAll('.faq-item');
+            for (var i = 0; i < all.length; i++) all[i].classList.remove('open');
+            if (!isOpen) item.classList.add('open');
+        }
+
+        /* ---- Editor PostMessage Listener ---- */
+        window.addEventListener('message', function(e) {
+            var d = e.data;
+            if (!d || !d.type) return;
+
+            if (d.type === 'scrollToSection') {
+                var section = document.querySelector('[data-editable-section="' + d.section + '"]');
+                if (section) {
+                    var screenNum = parseInt(section.getAttribute('data-screen'));
+                    if (screenNum) goToScreen(screenNum);
+                }
+            }
+
+            if (d.type === 'highlightElement') {
+                var el = document.querySelector(d.selector);
+                if (el) {
+                    el.classList.add('editor-highlight');
+                    setTimeout(function() { el.classList.remove('editor-highlight'); }, 2000);
+                }
+            }
+        });
+
+        /* ---- Editable section click (for editor) ---- */
+        document.addEventListener('click', function(e) {
+            if (window.parent === window) return; /* Not in iframe */
+            setTimeout(function() {
+                var active = document.querySelector('.screen.active');
+                if (active && active.hasAttribute('data-editable-section')) {
+                    window.parent.postMessage({
+                        type: 'sectionClicked',
+                        section: active.getAttribute('data-editable-section')
+                    }, '*');
+                }
+            }, 300);
+        });
+
+        /* ---- Init ---- */
+        updateProgress();
+    </script>
+
+    <script>
+    (function(){document.querySelectorAll('.quiz-option-text').forEach(function(t){if(!t.textContent.trim()){var o=t.closest('.quiz-option');if(o)o.style.display='none';}});})();
+    </script>
+
+<script>(function(){var O={"h":{"el266":true,"el304":true,"el12":true,"el219":true,"el242":true,"el270":true,"el236":true,"el235":true,"el233":true,"el232":true,"el230":true,"el229":true,"el227":true,"el226":true,"el224":true,"el313":true,"el328":true,"el306":true,"el301":true,"el321":true,"el308":true,"el324":true,"el315":true,"el314":true,"el323":true,"el300":true,"el326":true,"el307":true,"added_el_2270":true,"el240":true,"added_el_2272":true,"el244":true,"el269":true,"el271":true,"el277":true,"el279":true,"el310":true,"added_el_2249":true,"el295":true,"el309":true},"t":{"el4":"Un protocolo de jugos naturales de 4 semanas para ayudar a desinflamar el abdomen, apoyar la limpieza natural del hígado, el intestino y los riñones e iniciar una pérdida de peso saludable con ingredientes que encuentras en cualquier supermercado.\nMás de 8.500 personas ya siguieron este protocolo y muchas lograron perder entre 3 y 7 kg y reducir la inflamación abdominal durante las primeras semanas, acompañado de hábitos saludables.\n","el2":"Limpia y desinflama tu cuerpo con jugos naturales en solo 4 semanas.\n\n","el162":"🔥","el217":"El método Reinicio Digestivo fue creado para resolver EXACTAMENTE esto. En 21 días, +8.500 personas limpiaron hígado e intestino, perdieron la hinchazón y ganaron vitalidad con jugos verdes naturales — sin dietas dolorosas.","el244":"Recetas progresivas para desintoxicar el organismo con placer","el255":"Acceso gratis a todas las actualizaciones para siempre!","el256":"\nAcceso completo a todos los recursos en tu celular de por vida","el264":"⚡Biblioteca de video-reels con 52 recetas de jugos detox","el262":"⚡Podcast con Especialistas Episodios con especialistas en nutrición","el260":"⚡Material de Estudio Exclusivo Contenido premium actualizado sobre superalimentos","el258":"🔥Reinicio Digestivo™ \n\n\nLimpia y desinflama tu cuerpo con jugos naturales en solo 4 semanas.\n\n","el268":"⚡Acceso Vitalicio Actualizaciones gratuitas para siempre!","el270":"RECIBES TU PLAN + TODOS LOS 4 BONUS EXCLUSIVOS EN LA APP!\n                        (Valor Total de los Bonus incluido!)","el277":"$ 197,00","el224":"Ebook Jugo Detox Sexy (US$ 19)","el225":"EBOOK JUGOS DETOX SEXY El libro que querrás tener siempre a mano. Descubre 10 recetas de jugos y combinaciones prácticas para que nunca vuelvas a preguntarte qué ingredientes mezclar o qué preparar","el228":"PODCAST CON ESPECIALISTAS No solo sigas recetas: entiende lo que estás haciendo con tu cuerpo. Accede desde la app a conversaciones con nutriólogos donde descubrirás de forma sencilla el porqué detrás de la alimentación, la digestión y los hábitos que acompañan tu Reinicio Digestivo™. Escúchalos mientras caminas, cocinas o conduces y convierte momentos muertos de tu día en aprendizaje práctico. Es como llevar una pequeña biblioteca de expertos siempre contigo en el móvil, para tomar decisiones más conscientes incluso después de terminar las 4 semanas.","el230":"Banco de Reels: 52 Recetas en video (US$ 32","el231":"VIDEOCLASES CON RECETAS Hay días en los que no quieres leer una receta: quieres verla y prepararla. Por eso tendrás acceso a un banco de 52 videos cortos QUE SE ACTUALIZAN CONSTANTEMENTE  donde podrás descubrir nuevas combinaciones de jugos de forma rápida, visual y práctica. Abres tu móvil, eliges el que más te apetezca y ves cómo prepararlo paso a paso. Más variedad, menos aburrimiento y nuevas ideas durante todo el año, para que incorporar frutas y verduras a tu rutina deje de sentirse como una obligación y se convierta en algo que realmente tengas ganas de hacer.","el234":"NOTICIAS DE SUPERALIMENTOS Tu Reinicio no termina cuando completas las 4 semanas. Dentro de la app tendrás un espacio para descubrir nuevos estudios, tendencias de nutrición, ingredientes naturales y superalimentos que están ganando protagonismo en el mundo del bienestar. Una forma sencilla de mantenerte informada sin perder horas buscando entre cientos de artículos en internet. Nuevos conocimientos, ingredientes por descubrir e ideas para seguir evolucionando tus hábitos mucho después de terminar Reinicio Digestivo™","el297":"Purifica Tu Cuerpo Con Jugos Detox Purificadores en 21 Días","el298":"Y deja de pagar por jugos industrializados caros que vienen llenos de azúcar.","el311":"“A mis 40 años ya había descargado varios recetarios de jugos y siempre me pasaba lo mismo: hacía dos o tres recetas y terminaba abandonando. Con Reinicio Digestivo™ fue diferente porque la app me decía qué preparar y me ayudaba a seguir el protocolo día a día. Eso fue lo que me dio constancia. Empecé a organizar mejor mis comidas y a incorporar los jugos sin sentir que estaba haciendo otra dieta imposible. Para mí no es otro recetario: es como llevar el plan conmigo en el móvil.” \n","el313":"Julia Montero","el312":"🔥","el320":"🔥","el319":"“A los 21 días el cambio que más noté fue mi abdomen. Antes terminaba casi todas las tardes muy inflamada y con la ropa apretándome; al finalizar el plan esa hinchazón había disminuido muchísimo. Lo que hizo la diferencia fue tener los jugos organizados cada día en la app: no tenía que pensar qué preparar y eso me ayudó a ser constante por primera vez.” \n\n\n","el321":"Marianela López","el324":"1. ¿Tengo que pasar hambre, vivir solo de jugos o dejar de comer para seguir Reinicio Digestivo™?\nNo. El protocolo no está planteado como una dieta extrema ni como vivir únicamente de jugos. Los jugos se integran dentro de una rutina de alimentación y hábitos para que puedas aplicarlo de una forma práctica. La idea es que sepas qué preparar, cuándo tomarlo y cómo acompañarlo, sin convertir tu día en una restricción constante.\n\n2. Ya he probado dietas, detox y remedios caseros… ¿qué tiene de diferente este protocolo?\nReinicio Digestivo™ no consiste en darte unas cuantas recetas y dejarte improvisando. Recibes un protocolo organizado de 4 semanas, con combinaciones de jugos, planificación y pautas prácticas. En lugar de preguntarte cada mañana “¿qué hago hoy?”, tienes una ruta concreta que puedes seguir paso a paso.\n\n3. ¿Necesito ingredientes caros, suplementos o aparatos especiales?\nNo. Está pensado para prepararse con frutas, verduras y otros ingredientes fáciles de encontrar en un supermercado. Tampoco necesitas llenar la cocina de suplementos. El objetivo es precisamente que puedas incorporar el protocolo a tu vida cotidiana sin complicarlo ni convertirlo en otro gasto difícil de mantener.\n\n4. ¿Y si tengo poco tiempo y me cuesta ser constante?\nPrecisamente por eso el protocolo está organizado para reducir la improvisación. Tendrás las recetas y los pasos definidos para saber qué toca hacer cada día, en lugar de buscar información constantemente. No necesitas hacerlo “perfecto”: necesitas una estructura suficientemente sencilla como para poder mantenerla.\n","el328":"(c) 2025 \nReinicio Digestivo™ \n. Todos los derechos reservados. Este sitio no esta afiliado a Facebook ni a ninguna entidad de Facebook.","added_el_2250":"\nReinicio Digestivo™ \nEmpiezas por dentro....se nota por fuera","el1":"IMPORTANTE","el154":"🔥","el153":"\"Tuve hinchazón de piernas y barriga durante 5 años, pensé que era genética. Empecé el jugo verde de col rizada con limón y jengibre todos los días en ayunas. En 14 días la hinchazón desapareció, bajé 4kg y el pantalón volvió a entrar. Sin dietas dolorosas.\"","el164":"¿Y si esta vez fueras tú quien deja atrás la inflamación, vuelve a sentirse bien con su cuerpo y recupera el control? \n\n","el246":"Recetas de jugos Detox que te limpian por dentro de toxinas ","el249":"Saciedad natural y sabrosa","el257":"Reinicio Digestivo™ \n","el272":"RECIBES TU PLAN DE 21 DÍAS + TODOS LOS 4 BONUS EXCLUSIVOS EN LA APP!\n                        (Valor Total de los Bonus incluido!)","el279":"$ 12,00","el300":"Julia Montero","el315":"No necesitas otra dieta imposible. Necesitas saber qué hacer mañana cuando te levantes.\n","el314":"🔥","el302":"“A mis 40 años ya había descargado varios recetarios de jugos y siempre me pasaba lo mismo: hacía dos o tres recetas y terminaba abandonando. Con Reinicio Digestivo™ fue diferente porque la app me decía qué preparar y me ayudaba a seguir el protocolo día a día. Eso fue lo que me dio constancia. Empecé a organizar mejor mis comidas y a incorporar los jugos sin sentir que estaba haciendo otra dieta imposible. Para mí no es otro recetario: es como llevar el plan conmigo en el móvil.” ","el323":"Reinicio Digestivo™ te entrega el plan. Tú solo tienes que empezar.\n","el322":"Reinicio Digestivo™ te entrega el plan. Tú solo tienes que empezar.","el308":"Julia Montero","el330":"(c) 2025 Reinicio Digestivo. Todos los derechos reservados. Este sitio no esta afiliado a Facebook ni a ninguna entidad de Facebook.","el316":"No necesitas otra dieta imposible. Necesitas saber qué hacer mañana cuando te levantes.\n","el317":"Marianela López","el305":"🟡Garantía Blindada de 7 Días Si sigues el plan detox y no sienten diferencia en tu cuerpo te devolvemos el dinero sin preguntas... ( aunque sabemos que los cambios SI LOS NOTARAS )","el331":"(c) 2025 Reinicio Digestivo. Todos los derechos reservados. Este sitio no esta afiliado a Facebook ni a ninguna entidad de Facebook.","el247":"Recetas para dexintoxicar con placer ","el250":"Saciedad natural que se nota por fuera","el259":"⚡Acceso a la biblioteca de video- clases  recetas paso a paso de jugos détox que se actualizan constantemente","el261":"⚡Ebook Jugos Detox Sexy ","el263":"⚡Podcast con especialistas en nutrición para que tengas todas las respuestas ","el265":"⚡Sección de noticias de nutrición y superalimentos que se actualiza constantemente ","el267":"⚡Acceso y actualizaciones gratuitas de por vida!","el273":"RECIBES TU PLAN DE 21 DIAS + TODOS LOS 4 BONUS EXCLUSIVOS EN LA APP!\n                        (Valor Total de los Bonus incluido!)","el280":"$ 12,00","el301":"Julia Montero","el310":"Marianela López","el295":"TODO LO QUE RECIBES:","el309":"Marianela López"},"i":{"el3":"https://i.ibb.co/whZgRkd0/WEBP0.webp","added_el_2249":"https://i.ibb.co/S7NGTj4q/WEBP4.webp","el138":"https://i.ibb.co/wFzWLMG3/WEBP1.webp","el254":"https://i.ibb.co/8nfzXgFm/WEBP3.webp","el294":"https://i.ibb.co/vtj6N4Q/WEBP2.webp","el4":"https://i.ibb.co/whZgRkd0/WEBP0.webp","el140":"https://i.ibb.co/wFzWLMG3/WEBP1.webp","el256":"https://i.ibb.co/8nfzXgFm/WEBP3.webp","el296":"https://i.ibb.co/vtj6N4Q/WEBP2.webp","el257":"https://i.ibb.co/vtj6N4Q/WEBP2.webp","el297":"https://i.ibb.co/vtj6N4Q/WEBP2.webp"},"v":{},"a":{}};var doc=document;function mark(){var icons=doc.querySelectorAll("i[class],svg.fa,svg[class*=fa-]");for(var n=0;n<icons.length;n++){var ic=icons[n];var cn=ic.className.baseVal||ic.className||"";if(typeof cn==="string"&&cn.indexOf("fa")===-1)continue;ic.setAttribute("data-builder-editable","icon");ic.setAttribute("data-icon-id","ic"+n);}var imgs=doc.querySelectorAll("img");for(var k=0;k<imgs.length;k++)imgs[k].setAttribute("data-builder-editable","image");var vids=doc.querySelectorAll("video,iframe[src*=youtube],iframe[src*=vimeo],iframe[src*=vturb],iframe[src*=converteai],[data-vsl]");for(var vk=0;vk<vids.length;vk++)vids[vk].setAttribute("data-builder-editable","video");var btns=doc.querySelectorAll("a,button");for(var b=0;b<btns.length;b++){var bt=btns[b];if(bt.closest&&bt.closest("[data-builder-editable=text],[data-builder-editable=button],[data-builder-editable=link]"))continue;if(!bt.textContent||!bt.textContent.trim())continue;bt.setAttribute("data-builder-editable",bt.tagName==="A"?"link":"button");}var textSels=["h1","h2","h3","h4","h5","h6","p","li","blockquote","figcaption","label","td","th","summary","dt","dd"];for(var i=0;i<textSels.length;i++){var nodes=doc.querySelectorAll(textSels[i]);for(var j=0;j<nodes.length;j++){var el=nodes[j];if(el.closest&&el.closest("[data-builder-editable=text],[data-builder-editable=button],[data-builder-editable=link]"))continue;if(!el.textContent||!el.textContent.trim())continue;el.setAttribute("data-builder-editable","text");}}var inlines=doc.querySelectorAll("span,strong,em,small,mark,code,abbr,cite");for(var s=0;s<inlines.length;s++){var sp=inlines[s];if(sp.closest&&sp.closest("[data-builder-editable=text],[data-builder-editable=button],[data-builder-editable=link]"))continue;if(!sp.textContent||!sp.textContent.trim())continue;if(sp.children.length>0)continue;sp.setAttribute("data-builder-editable","text");}var divs=doc.querySelectorAll("div");for(var d=0;d<divs.length;d++){var dv=divs[d];if(dv.closest&&dv.closest("[data-builder-editable=text],[data-builder-editable=button],[data-builder-editable=link]"))continue;var hasBlock=false;for(var c=0;c<dv.children.length;c++){var t=dv.children[c].tagName;if(t==="DIV"||t==="P"||t==="UL"||t==="OL"||t==="SECTION"||t==="HEADER"||t==="FOOTER"||t==="NAV"||t==="ARTICLE"||t==="FORM"){hasBlock=true;break;}}if(hasBlock)continue;if(!dv.textContent||!dv.textContent.trim())continue;if(dv.textContent.trim().length>800)continue;dv.setAttribute("data-builder-editable","text");}var allEd=doc.querySelectorAll("[data-builder-editable]");for(var ue=0;ue<allEd.length;ue++){if(!allEd[ue].hasAttribute("data-builder-uid"))allEd[ue].setAttribute("data-builder-uid","el"+ue);}var inps=doc.querySelectorAll("input,textarea");for(var ip=0;ip<inps.length;ip++){inps[ip].setAttribute("data-builder-editable","input");if(!inps[ip].hasAttribute("data-builder-uid"))inps[ip].setAttribute("data-builder-uid","inp"+ip);}for(var u in O.h){var hel=doc.querySelector('[data-builder-uid="'+u+'"]');if(hel)hel.style.display="none";}for(var u in O.t){var tel=doc.querySelector('[data-builder-uid="'+u+'"]');if(tel)tel.textContent=O.t[u];}for(var u in O.i){var iel=doc.querySelector('[data-builder-uid="'+u+'"]');if(iel && iel.tagName==="IMG")iel.src=O.i[u];}for(var u in (O.v||{})){var vel=doc.querySelector('[data-builder-uid="'+u+'"]');if(vel){var vw=doc.createElement("div");vw.innerHTML=O.v[u];var nv=vw.firstElementChild;if(nv){nv.setAttribute("data-builder-uid",u);vel.parentNode.replaceChild(nv,vel);}}}for(var u in (O.a||{})){var ael=doc.querySelector('[data-builder-uid="'+u+'"]');if(ael){if(O.a[u].placeholder!=null)ael.setAttribute("placeholder",O.a[u].placeholder);if(O.a[u].value!=null)ael.value=O.a[u].value;}}}if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",mark);else mark();})();</script></body></html>
